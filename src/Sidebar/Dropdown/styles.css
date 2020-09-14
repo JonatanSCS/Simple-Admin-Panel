@@ -1,0 +1,105 @@
+.Dropdown {
+  --active-color-dark: #199EB9;
+  --active-color-light: #EAF8F9;
+  --inactive-color-dark: #000;
+  --inactive-color-light: #BCBCBC;
+}
+
+.Dropdown .Menu {
+  max-height: 0;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+
+.Dropdown .Visible {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+.Dropdown p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 15px;
+  position: relative;
+  border-left: 4px solid transparent;
+  color: var(--inactive-color-dark);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+.Dropdown p:hover {
+  font-size: 15px;
+}
+
+.DropdownArrow {
+  transition-duration: 0.5s;
+  transition-property: transform;
+  background-color: var(--inactive-color-light);
+  position: absolute;
+  right: 20px;
+  top: 23px;
+  width: 10px;
+  height: 10px;
+  -webkit-mask: url(./assets/arrow.svg) no-repeat center;
+  mask: url(./assets/arrow.svg) no-repeat center;
+}
+
+.Dropdown p .DropdownImage {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  background-color: var(--inactive-color-light);
+}
+
+.DropdownImage-general {
+  -webkit-mask: url(./assets/general.svg) no-repeat center;
+  mask: url(./assets/general.svg) no-repeat center;
+}
+
+.DropdownImage-transactions {
+  -webkit-mask: url(./assets/transactions.svg) no-repeat center;
+  mask: url(./assets/transactions.svg) no-repeat center;
+}
+
+.DropdownImage-accounting {
+  -webkit-mask: url(./assets/accounting.svg) no-repeat center;
+  mask: url(./assets/accounting.svg) no-repeat center;
+}
+
+.DropdownImage-developers {
+  -webkit-mask: url(./assets/developers.svg) no-repeat center;
+  mask: url(./assets/developers.svg) no-repeat center;
+}
+
+.Dropdown ul li {
+  padding: 15px 0 15px 60px;
+  color: var(--inactive-color-light);
+}
+
+/* Active Status */
+.Dropdown .DropdownActive {
+  border-left: 4px solid var(--active-color-dark);
+}
+
+.Dropdown .DropdownActive:hover {
+  font-size: 14px;
+}
+
+
+.Dropdown .DropdownActive .DropdownArrow {
+  background-color: var(--active-color-dark);
+  transform: rotate(180deg);
+}
+
+.Dropdown p .ImageActive {
+  background-color: var(--active-color-dark);
+}
+
+.Menu .Active {
+  color: var(--active-color-dark);
+  background: var(--active-color-light);
+}

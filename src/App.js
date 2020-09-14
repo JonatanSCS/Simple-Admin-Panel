@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Sidebar from './Sidebar'
+
 const App = () => {
   return (
     <div>
-      <h1>Simple Admin Panel</h1>
+      <Sidebar />
     </div>
   )
 }
