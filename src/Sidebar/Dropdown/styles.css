@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+.Dropdown .Menu li a {
+  color: var(--inactive-color-light)
+}
+
 .Dropdown .Visible {
   max-height: 500px;
   transition: max-height 0.25s ease-in;
@@ -75,9 +79,10 @@
   mask: url(./assets/developers.svg) no-repeat center;
 }
 
-.Dropdown ul li {
+.Dropdown ul li a {
   padding: 15px 0 15px 60px;
   color: var(--inactive-color-light);
+  display: block;
 }
 
 /* Active Status */
@@ -99,7 +104,7 @@
   background-color: var(--active-color-dark);
 }
 
-.Menu .Active {
+.Menu li a.Active {
   color: var(--active-color-dark);
   background: var(--active-color-light);
 }

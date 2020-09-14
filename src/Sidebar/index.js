@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import { paths } from '@/views'
+
 import Dropdown from './Dropdown'
 import options from './options'
 import menuImage from './assets/menu.svg'
@@ -27,9 +31,18 @@ function Sidebar () {
         />
         <ul>
           <li className="Hero">
-            <img src={logoImage} alt="Santa Cruz" />
+            <Link to={paths.home}>
+              <img src={logoImage} alt="Santa Cruz" />
+            </Link>
           </li>
-          { options.map(item => <Dropdown key={item.id} {...item} data-testid="DropdownInstance" />) }
+          { options.map(item =>
+            <Dropdown
+              key={item.id}
+              {...item}
+              closeSidebar={() => setVisible(false)}
+              data-testid="DropdownInstance"
+            />
+          )}
         </ul>
       </nav>
     </div>
