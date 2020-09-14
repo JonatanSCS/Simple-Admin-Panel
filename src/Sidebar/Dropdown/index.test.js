@@ -3,10 +3,10 @@ import { shallow } from 'enzyme'
 import Dropdown from './index'
 
 const mockItems = [{
-  id: 'item-one',
+  id: 'generalOne',
   label: 'Item One'
 }, {
-  id: 'item-two',
+  id: 'generalTwo',
   label: 'Item Two'
 }]
 const wrapper = shallow(<Dropdown id="general" label="General" items={mockItems} />)
