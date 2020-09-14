@@ -10,14 +10,26 @@ function Sidebar () {
   const [visible, setVisible] = useState(false)
   return (
     <div className="Sidebar">
-      <img src={menuImage} alt="menu" className="SidebarIcon" onClick={() => setVisible(!visible)} />
+      <img
+        src={menuImage}
+        alt="open menu"
+        className="SidebarIcon"
+        onClick={() => setVisible(!visible)}
+        data-testid="MenuMobileIcon"
+      />
       <nav className={visible ? 'MenuVisible' : ''}>
-        <img src={closeImage} alt="menu" className="SidebarIcon CloseIcon" onClick={() => setVisible(!visible)} />
+        <img
+          src={closeImage}
+          alt="close menu"
+          className="SidebarIcon CloseIcon"
+          onClick={() => setVisible(!visible)}
+          data-testid="CloseMobileIcon"
+        />
         <ul>
           <li className="Hero">
             <img src={logoImage} alt="Santa Cruz" />
           </li>
-          { options.map(item => <Dropdown key={item.id} {...item} />) }
+          { options.map(item => <Dropdown key={item.id} {...item} data-testid="DropdownInstance" />) }
         </ul>
       </nav>
     </div>

@@ -6,14 +6,18 @@ function Dropdown ({ id, label, items }) {
   const [visible, setVisible] = useState(false)
   return (
     <li className="Dropdown">
-      <p className={visible ? 'DropdownActive' : ''} onClick={() => setVisible(!visible)}>
-        <span className="DropdownArrow" />
+      <p
+        className={visible ? 'DropdownActive' : ''}
+        onClick={() => setVisible(!visible)}
+        data-testid="DropdownHeader"
+      >
+        <span className="DropdownArrow" data-testid="DropdownArrow" />
         <span className={`DropdownImage DropdownImage-${id} ${visible ? 'ImageActive' : ''}`} />
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
         <li className="Active">Payments</li>
-        {items.map(({ id, label }) => <li key={id}>{label}</li>)}
+        {items.map(({ id, label }) => <li key={id} data-testid="DropdownItems">{label}</li>)}
       </ul>
     </li>
   )

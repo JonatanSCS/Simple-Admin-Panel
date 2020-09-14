@@ -4,7 +4,7 @@ import Sidebar from './Sidebar'
 
 const App = () => {
   return (
-    <div>
+    <div id="AppAdminPanel">
       <Sidebar />
     </div>
   )
