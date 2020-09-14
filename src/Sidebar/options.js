@@ -2,10 +2,10 @@ export default [{
   id: 'general',
   label: 'General',
   items: [{
-    id: 'general-one',
+    id: 'generalOne',
     label: 'General One'
   }, {
-    id: 'general-two',
+    id: 'generalTwo',
     label: 'General Two'
   }]
 }, {
@@ -25,23 +25,23 @@ export default [{
   id: 'accounting',
   label: 'Accounting',
   items: [{
-    id: 'accounting-one',
+    id: 'accountingOne',
     label: 'Accounting One'
   }, {
-    id: 'accounting-two',
+    id: 'accountingTwo',
     label: 'Accounting Two'
   }]
 }, {
   id: 'developers',
   label: 'Developers',
   items: [{
-    id: 'developers-one',
+    id: 'developersOne',
     label: 'Developers One'
   }, {
-    id: 'developers-two',
+    id: 'developersTwo',
     label: 'Developers Two'
   }, {
-    id: 'developers-three',
+    id: 'developersThree',
     label: 'Developers Three'
   }]
 }]

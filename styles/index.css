@@ -9,3 +9,13 @@
 body {
   background: var(--main-background);
 }
+
+.MainContainer {
+  padding: 15px;
+}
+
+@media (min-width: 1024px) {
+  .MainContainer {
+    margin-left: 300px;
+  }
+}

@@ -3,7 +3,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve('dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -12,5 +13,8 @@ module.exports = {
       { test: /\.svg$/, use: ['svg-url-loader'] },
       { test: /\.(png|jpe?g|gif)$/i, use: ['file-loader'] }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 }

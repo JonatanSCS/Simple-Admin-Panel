@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
+import { paths } from '../../views'
+
 import './styles.css'
 
-function Dropdown ({ id, label, items }) {
+function Dropdown ({ id, label, items, closeSidebar }) {
   const [visible, setVisible] = useState(false)
   return (
     <li className="Dropdown">
@@ -16,14 +19,27 @@ function Dropdown ({ id, label, items }) {
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
-        <li className="Active">Payments</li>
-        {items.map(({ id, label }) => <li key={id} data-testid="DropdownItems">{label}</li>)}
+        {items.map(({ id, label }) => (
+          <li key={id} data-testid="DropdownItems">
+            <NavLink
+              to={paths[id]}
+              activeClassName="Active"
+              onClick={() => {
+                closeSidebar()
+                setVisible(false)
+              }}
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </li>
   )
 }
 
 Dropdown.propTypes = {
+  closeSidebar: PropTypes.func,
   id: PropTypes.string,
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
