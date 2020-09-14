@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import { paths } from '@/views'
+import { paths } from '../../views'
 
 import './styles.css'
 

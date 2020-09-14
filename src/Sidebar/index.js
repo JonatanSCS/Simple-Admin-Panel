@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { paths } from '@/views'
+import { paths } from '../views'
 
 import Dropdown from './Dropdown'
 import options from './options'
