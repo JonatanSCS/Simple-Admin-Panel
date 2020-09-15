@@ -1,21 +1,34 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import StatusLabel from '../StatusLabel'
 import eyeImage from './assets/eye.svg'
 import visaImage from './assets/visa.svg'
-import masterImage from './assets/master.svg'
 import americanImage from './assets/american.svg'
 
 import './styles.css'
 
-function DataType ({ type }) {
-  const images = [visaImage, masterImage, americanImage]
-  const random = Math.floor(Math.random() * 3) + 0
-  const [image] = useState(images[random])
+function DataType ({ type, brand }) {
+  const images = {
+    visa: visaImage,
+    american_express: americanImage
+  }
   return (
     <div className="DataTypeContainer">
       <p>{type}</p>
-      {type ? <img src={image} alt="Credit card" /> : null}
+      {type ? <img src={images[brand]} alt="Credit card" /> : null}
+    </div>
+  )
+}
+
+function DataCreated ({ created }) {
+  const d = new Date(created)
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dec']
+  const day = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
+  const hour = `${d.getHours()}:${d.getMinutes()}`
+
+  return (
+    <div className="DataContainer">
+      <p>{day}</p><p>{hour}</p>
     </div>
   )
 }
@@ -26,8 +39,8 @@ function DataRow ({ data, fields }) {
       status: <StatusLabel status={data.status} />,
       amount: <p>{`$ ${data.amount}`}</p>,
       customer: <div className="DataContainer"><p>{data.customer.name}</p><p>{data.customer.email}</p></div>,
-      date: <div className="DataContainer"><p>{data.date}</p><p>{data.hour}</p></div>,
-      type: <DataType type={data.type} />
+      created: <DataCreated created={data.created} />,
+      type: <DataType type={data.type} brand={data.brand} />
     }
 
     return components[field] || <p>{data[field]}</p>
@@ -50,6 +63,15 @@ function DataRow ({ data, fields }) {
 DataRow.propTypes = {
   data: PropTypes.object.isRequired,
   fields: PropTypes.array.isRequired
+}
+
+DataType.propTypes = {
+  type: PropTypes.string,
+  brand: PropTypes.string
+}
+
+DataCreated.propTypes = {
+  created: PropTypes.number
 }
 
 export default DataRow

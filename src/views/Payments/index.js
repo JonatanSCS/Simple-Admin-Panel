@@ -7,10 +7,10 @@ import Select from '../../components/Select'
 import SortTable from '../../components/SortTable'
 
 function Payments () {
-  const [sort, setSort] = useState('date')
+  const [sort, setSort] = useState('created')
   const [payments, setPayments] = useState([])
   const sortBy = [{
-    value: 'date',
+    value: 'created',
     label: 'Date'
   }, {
     value: 'status',
@@ -27,13 +27,15 @@ function Payments () {
   }]
 
   useEffect(() => {
+    setPayments([])
     async function fetchData () {
-      const { data } = await getPaymentsRecords()
-      setPayments(data.payments)
+      const payments = await getPaymentsRecords(sort)
+      console.log(payments)
+      setPayments(payments)
     }
 
     fetchData()
-  }, [])
+  }, [sort])
 
   return (
     <div className="Payments ViewContainer">
