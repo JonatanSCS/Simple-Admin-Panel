@@ -26,6 +26,7 @@ th, td {
 th {
   white-space: nowrap;
   font-weight: 300;
+  min-width: 100px;
   cursor: pointer;
 }
 
@@ -39,6 +40,10 @@ th:after {
   transition: .25s all ease;
   font-size: 10px;
   display: none;
+}
+
+tbody tr:nth-child(2n - 1) {
+  background: #F8F9FA;
 }
 
 @media (min-width: 1024px) {
