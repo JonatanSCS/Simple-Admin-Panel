@@ -25,10 +25,10 @@ function SortTable ({ sorters, active, onChange, items }) {
           </tr>
         </thead>
         <tbody>
-          {items.map((items) =>
+          {items.map((item) =>
             <DataRow
-              key={items.id}
-              data={items}
+              key={item.id}
+              data={item}
               fields={sorters.map((sorter) => sorter.value)}
             />
           )}
@@ -44,7 +44,8 @@ SortTable.propTypes = {
   sorters: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     label: PropTypes.string
-  }))
+  })),
+  items: PropTypes.array
 }
 
 export default SortTable
