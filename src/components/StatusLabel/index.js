@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './styles.css'
 
-function StatusLabel ({status}) {
+function StatusLabel ({ status }) {
   const labels = {
     declined: 'Declined',
     refunded: 'Total Refund',
@@ -15,6 +16,10 @@ function StatusLabel ({status}) {
       <p>{labels[status]}</p>
     </div>
   )
+}
+
+StatusLabel.propTypes = {
+  status: PropTypes.string.isRequired
 }
 
 export default StatusLabel
