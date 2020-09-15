@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-
 import views, { components, paths } from './views'
 
 import Sidebar from './Sidebar'
