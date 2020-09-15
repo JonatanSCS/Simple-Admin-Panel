@@ -37,6 +37,7 @@ function Payments () {
 
   return (
     <div className="Payments ViewContainer">
+      <h1>Payments</h1>
       <div className="PaymentsSort">
         <Select items={sortBy} value={sort} onChange={setSort} />
       </div>

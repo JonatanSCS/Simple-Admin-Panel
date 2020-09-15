@@ -1,6 +1,6 @@
 .SortTable {
   overflow: scroll;
-  margin: 20px 0;
+  margin: 15px 0;
   background: #fff;
   max-width: 1024px;
 }
@@ -18,9 +18,10 @@ table {
 
 th, td {
   text-align: left;
-  padding: 5px 10px;
+  padding: 15px 10px 0;
   height: 30px;
-  vertical-align: middle;
+  vertical-align: top;
+  font-weight: 400;
 }
 
 th {
@@ -32,22 +33,32 @@ th {
 
 th:after {
   content: '\25BC';
-  padding: 10px 15px;
+  padding: 0 15px;
   cursor: pointer;
   pointer-events: none;
   -webkit-transition: .25s all ease;
   -o-transition: .25s all ease;
   transition: .25s all ease;
-  font-size: 10px;
+  font-size: 7px;
   display: none;
+}
+
+th:first-child:after {
+  display: none;
+  content: '';
 }
 
 tbody tr:nth-child(2n - 1) {
   background: #F8F9FA;
 }
 
+tbody tr td:first-child {
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   th:after {
     display: inline;
   }
+
 }

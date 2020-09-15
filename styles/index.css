@@ -12,11 +12,15 @@ body {
 
 .ViewContainer {
   max-width: 1024px;
-  padding: 20px 15px;
+  padding: 10px;
 }
 
 @media (min-width: 1024px) {
   .MainContainer {
     margin-left: 300px;
+  }
+
+  .ViewContainer {
+    padding: 20px 55px;
   }
 }

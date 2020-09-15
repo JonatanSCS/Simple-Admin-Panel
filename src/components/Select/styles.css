@@ -21,6 +21,7 @@ select {
   overflow: hidden;
   border-radius: 2.5px;
   min-height: 50px;
+  margin: 15px 0;
 }
 
 .select::after {

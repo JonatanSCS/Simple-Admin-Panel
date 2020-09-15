@@ -11,6 +11,7 @@ function SortTable ({ sorters, active, onChange, items }) {
       <table>
         <thead>
           <tr>
+            <th></th>
             {sorters.map(({ value, label }) =>
               <th
                 key={value}
