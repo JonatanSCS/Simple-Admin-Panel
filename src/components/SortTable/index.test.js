@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import SortTable from './index'
+import payments from '../../mocks/payments'
 
 const items = [{
   value: 'date',
@@ -14,7 +15,15 @@ const items = [{
 }]
 
 const onChange = jest.fn()
-const wrapper = shallow(<SortTable sorters={items} active="status" onChange={onChange} />)
+const wrapper = shallow(
+  <SortTable
+    sorters={items}
+    active="status"
+    onChange={onChange}
+    items={payments.data.payments}
+  />
+)
+
 test('Sort Table is render successfully', () => {
   const headers = wrapper.find('[data-testid="SortTableHeader"]')
   expect(headers).toHaveLength(items.length)

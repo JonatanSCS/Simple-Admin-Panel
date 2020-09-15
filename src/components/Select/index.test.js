@@ -19,7 +19,7 @@ const select = wrapper.find('[data-testid="SelectMain"]')
 test('Page render successfully', () => {
   const options = wrapper.find('[data-testid="SelectOption"]')
   expect(options).toHaveLength(items.length)
-  expect(select.props().defaultValue).toEqual('date')
+  expect(select.props().value).toEqual('date')
 })
 
 test('Select change call onChange handler', () => {

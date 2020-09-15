@@ -1,0 +1,31 @@
+.StatusLabel {
+  border-radius: 100px;
+  font-size: 12px;
+  padding: 5px;
+  max-width: 100px;
+  text-align: center;
+}
+
+.Status-declined {
+  color: #D97375;
+  background: #F9DBD6;
+}
+
+.Status-refunded {
+  color: #6CACD8;
+  background: #D3EBFE;
+}
+
+.Status-no_charge {
+  color: #fff;
+  background: #B29DD9;
+}
+
+.Status-partially_refunded {
+  color: #797979;
+  background: #FDFD98;
+}
+.Status-paid {
+  color: #fff;
+  background: #77DD77;
+}

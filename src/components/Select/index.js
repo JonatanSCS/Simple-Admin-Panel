@@ -6,7 +6,6 @@ function Select ({ items, value, onChange }) {
   return (
     <div className="select">
       <select
-        defaultValue={value}
         onChange={(e) => onChange(e.target.value)}
         data-testid="SelectMain"
         value={value}

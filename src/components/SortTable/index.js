@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
+import DataRow from '../DataRow'
+
 import './styles.css'
 
-function SortTable ({ sorters, active, onChange }) {
+function SortTable ({ sorters, active, onChange, items }) {
   return (
     <div className="SortTable">
       <table>
@@ -20,9 +23,17 @@ function SortTable ({ sorters, active, onChange }) {
             )}
           </tr>
         </thead>
+        <tbody>
+          {items.map((items) =>
+            <DataRow
+              key={items.id}
+              data={items}
+              fields={sorters.map((sorter) => sorter.value)}
+            />
+          )}
+        </tbody>
       </table>
     </div>
-
   )
 }
 
