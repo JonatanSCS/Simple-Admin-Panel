@@ -10,8 +10,10 @@ body {
   background: var(--main-background);
 }
 
-.MainContainer {
-  padding: 15px;
+.ViewContainer {
+  width: 100%;
+  max-width: 1024px;
+  padding: 20px 15px;
 }
 
 @media (min-width: 1024px) {

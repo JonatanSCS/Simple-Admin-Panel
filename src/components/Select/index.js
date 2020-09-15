@@ -9,6 +9,7 @@ function Select ({ items, value, onChange }) {
         defaultValue={value}
         onChange={(e) => onChange(e.target.value)}
         data-testid="SelectMain"
+        value={value}
       >
         <option disabled>Order by</option>
         {
