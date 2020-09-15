@@ -11,7 +11,7 @@ function Payments () {
   const [payments, setPayments] = useState([])
   const sortBy = [{
     value: 'date',
-    label: 'Payment Date'
+    label: 'Date'
   }, {
     value: 'status',
     label: 'Payment Status'
@@ -19,8 +19,8 @@ function Payments () {
     value: 'type',
     label: 'Payment Type'
   }, {
-    value: 'custumer',
-    label: 'Custumer'
+    value: 'customer',
+    label: 'Customer'
   }, {
     value: 'amount',
     label: 'Amount'
