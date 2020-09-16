@@ -1,5 +1,6 @@
 import Home from './views/Home'
 import Payments from './views/Payments'
+import PaymentDetail from './views/PaymentDetail'
 
 import generalImage from './assets/general.svg'
 import transactionsImage from './assets/transactions.svg'
@@ -36,7 +37,13 @@ export default [
         id: 'payments',
         path: '/payments',
         label: 'Payments',
-        component: Payments
+        component: Payments,
+        exact: true,
+        items: [{
+          id: 'paymentsDetail',
+          path: '/payments/:id',
+          component: PaymentDetail
+        }]
       }, {
         id: 'transfers',
         path: '/transfers',

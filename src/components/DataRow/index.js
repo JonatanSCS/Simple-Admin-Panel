@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
+import { NavLink } from 'react-router-dom'
+
 import StatusLabel from '../StatusLabel'
 import eyeImage from './assets/eye.svg'
 import visaImage from './assets/visa.svg'
@@ -33,7 +36,7 @@ function DataCreated ({ created }) {
   )
 }
 
-function DataRow ({ data, fields }) {
+function DataRow ({ data, fields, path }) {
   const renderDataComponent = (field) => {
     const components = {
       status: <StatusLabel status={data.status} />,
@@ -49,7 +52,9 @@ function DataRow ({ data, fields }) {
   return (
     <tr className="DataRow" height="70px">
       <td>
-        <img src={eyeImage} alt="payment detail" className="DetailImage" />
+        <NavLink to={`${path}/123`}>
+          <img src={eyeImage} alt="payment detail" className="DetailImage" />
+        </NavLink>
       </td>
       {fields.map((field) =>
         <td key={field}>
