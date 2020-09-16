@@ -8,3 +8,12 @@ export function flatRoutes (routes) {
   })
   return _routes
 }
+
+export function calculateDate (date) {
+  const d = new Date(date)
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dec']
+  const day = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
+  const hour = `${d.getHours()}:${d.getMinutes()}`
+
+  return `${day}, ${hour}`
+}

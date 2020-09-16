@@ -1,3 +1,7 @@
 .PaymentDetail .Container {
   margin: 20px 0;
 }
+
+.PaymentDetail .Container .View {
+  margin: 20px 0;
+}

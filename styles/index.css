@@ -15,6 +15,21 @@ body {
   padding: 10px;
 }
 
+.DataCard {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px 10px 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.DataCard h2 {
+  text-transform: uppercase;
+  border-bottom: 1px solid #C9D0D7;
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
 @media (min-width: 1024px) {
   .MainContainer {
     margin-left: 300px;
