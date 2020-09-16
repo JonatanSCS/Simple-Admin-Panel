@@ -10,9 +10,9 @@ import closeImage from './assets/close.svg'
 import logoImage from './assets/logo.jpg'
 import './styles.css'
 
-function Sidebar ({ history }) {
+function Sidebar ({ history, test }) {
   const [visible, setVisible] = useState(false)
-  history.listen(() => setVisible(false))
+  !test && history.listen(() => setVisible(false))
   return (
     <div className="Sidebar">
       <img
@@ -50,7 +50,9 @@ function Sidebar ({ history }) {
 }
 
 Sidebar.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
+  test: PropTypes.bool
 }
 
+export const TestSidebar = Sidebar
 export default withRouter(Sidebar)

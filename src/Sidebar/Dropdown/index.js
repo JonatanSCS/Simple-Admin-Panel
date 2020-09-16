@@ -4,9 +4,9 @@ import { NavLink, withRouter } from 'react-router-dom'
 
 import './styles.css'
 
-function Dropdown ({ history, label, items, image }) {
+function Dropdown ({ history, label, items, image, test }) {
   const [visible, setVisible] = useState(false)
-  history.listen(() => setVisible(false))
+  !test && history.listen(() => setVisible(false))
   return (
     <li className="Dropdown">
       <p
@@ -32,6 +32,7 @@ function Dropdown ({ history, label, items, image }) {
 }
 
 Dropdown.propTypes = {
+  test: PropTypes.bool,
   history: PropTypes.object,
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
@@ -42,4 +43,5 @@ Dropdown.propTypes = {
   image: PropTypes.string
 }
 
+export const TestDropdown = Dropdown
 export default withRouter(Dropdown)

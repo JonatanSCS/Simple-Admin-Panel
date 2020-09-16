@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Sidebar from './index'
+import { TestSidebar } from './index'
 import routes from '../routes'
 
-const wrapper = shallow(<Sidebar />)
+const wrapper = shallow(<TestSidebar test />)
 test('Sidebar opens and close on icons clicks', () => {
   const menuIcon = wrapper.find('[data-testid="MenuMobileIcon"]')
   const closeIcon = wrapper.find('[data-testid="CloseMobileIcon"]')
