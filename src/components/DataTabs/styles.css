@@ -1,0 +1,42 @@
+.DataTabs {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  overflow: scroll;
+}
+
+.DataTabs button {
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid #C9D0D7;
+  font-size: 16px;
+  padding: 15px;
+  width: 200px;
+}
+
+.DataTabs button.Active {
+  font-weight: 500;
+  border-bottom: 3px solid #000;
+}
+
+.DataTabs .Border {
+  width: inherit;
+  height: 100%;
+  display: inline-block;
+  border-bottom: 2px solid #C9D0D7;
+}
+
+@media (min-width: 768px) {
+  /* .DataTabs button {
+    width: 33%;
+  } */
+}
+
+
+@media (min-width: 1024px) {
+  /* .DataTabs button {
+    width: 20%;
+  } */
+
+}
