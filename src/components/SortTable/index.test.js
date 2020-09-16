@@ -14,6 +14,13 @@ const items = [{
   label: 'Payment Type'
 }]
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: () => ({
+    pathname: '/'
+  })
+}))
+
 const onChange = jest.fn()
 const wrapper = shallow(
   <SortTable
