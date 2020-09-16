@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import { paths } from '../../views'
 
 import './styles.css'
 
@@ -19,9 +18,9 @@ function Dropdown ({ id, label, items }) {
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
-        {items.map(({ id, label }) => (
+        {items.map(({ id, label, path }) => (
           <li key={id} data-testid="DropdownItems">
-            <NavLink to={paths[id]} activeClassName="Active">
+            <NavLink to={path} activeClassName="Active">
               {label}
             </NavLink>
           </li>

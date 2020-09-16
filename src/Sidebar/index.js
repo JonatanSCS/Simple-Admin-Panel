@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { paths } from '../views'
-
 import routes from '../routes'
 
 import Dropdown from './Dropdown'
@@ -31,12 +29,13 @@ function Sidebar () {
         />
         <ul>
           <li className="Hero">
-            <Link to={paths.home}>
+            <Link to="/">
               <img src={logoImage} alt="Santa Cruz" />
             </Link>
           </li>
-          { routes.map(route => route.key === 'home' ? null : (
+          { routes.map(route => route.id === 'home' ? null : (
             <Dropdown
+              key={route.id}
               {...route}
               closeSidebar={() => useState(false)}
               data-testid="DropdownInstance"
