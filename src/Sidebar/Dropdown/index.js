@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import './styles.css'
 
-function Dropdown ({ id, label, items, image }) {
+function Dropdown ({ history, label, items, image, test }) {
   const [visible, setVisible] = useState(false)
+  !test && history.listen(() => setVisible(false))
   return (
     <li className="Dropdown">
       <p
@@ -31,8 +32,8 @@ function Dropdown ({ id, label, items, image }) {
 }
 
 Dropdown.propTypes = {
-  closeSidebar: PropTypes.func,
-  id: PropTypes.string,
+  test: PropTypes.bool,
+  history: PropTypes.object,
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
@@ -42,4 +43,5 @@ Dropdown.propTypes = {
   image: PropTypes.string
 }
 
-export default Dropdown
+export const TestDropdown = Dropdown
+export default withRouter(Dropdown)

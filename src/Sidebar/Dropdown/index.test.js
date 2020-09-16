@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Dropdown from './index'
+import { TestDropdown } from './index'
 
 const mockRoutes = {
   id: 'developers',
@@ -22,7 +22,7 @@ const mockRoutes = {
   ]
 }
 
-const wrapper = shallow(<Dropdown id="general" label="General" {...mockRoutes} />)
+const wrapper = shallow(<TestDropdown test {...mockRoutes} />)
 test('Toggle items on header click', () => {
   let header = wrapper.find('[data-testid="DropdownHeader"]')
 
