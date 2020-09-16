@@ -52,7 +52,7 @@ function DataRow ({ data, fields, path }) {
   return (
     <tr className="DataRow" height="70px">
       <td>
-        <NavLink to={`${path}/123`}>
+        <NavLink to={`${path}/${data.id}`}>
           <img src={eyeImage} alt="payment detail" className="DetailImage" />
         </NavLink>
       </td>
@@ -67,7 +67,8 @@ function DataRow ({ data, fields, path }) {
 
 DataRow.propTypes = {
   data: PropTypes.object.isRequired,
-  fields: PropTypes.array.isRequired
+  fields: PropTypes.array.isRequired,
+  path: PropTypes.string.isRequired
 }
 
 DataType.propTypes = {
