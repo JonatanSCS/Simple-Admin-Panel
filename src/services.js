@@ -1,8 +1,16 @@
 import payments from './mocks/payments'
 
-export const getPaymentsRecords = (sortBy) => {
+export const getPaymentsRecords = sortBy => {
   return new Promise((resolve) => {
     resolve(sortByField(payments.data.payments, sortBy))
+  })
+}
+
+export const getPaymentById = id => {
+  return new Promise((resolve) => {
+    resolve(payments.data.payments.find(item => {
+      return item.id === id
+    }))
   })
 }
 
