@@ -11,6 +11,7 @@ nav {
   top: 0;
   left: -100%;
   background: var(--sidebar-background);
+  z-index: 10;
 }
 
 .Hero {

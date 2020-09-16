@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import routes from '../routes'
 
@@ -9,8 +10,9 @@ import closeImage from './assets/close.svg'
 import logoImage from './assets/logo.jpg'
 import './styles.css'
 
-function Sidebar () {
+function Sidebar ({ history }) {
   const [visible, setVisible] = useState(false)
+  history.listen(() => setVisible(false))
   return (
     <div className="Sidebar">
       <img
@@ -18,6 +20,7 @@ function Sidebar () {
         alt="open menu"
         className="SidebarIcon"
         data-testid="MenuMobileIcon"
+        onClick={() => setVisible(!visible)}
       />
       <nav className={visible ? 'MenuVisible' : ''}>
         <img
@@ -37,7 +40,6 @@ function Sidebar () {
             <Dropdown
               key={route.id}
               {...route}
-              closeSidebar={() => useState(false)}
               data-testid="DropdownInstance"
             />
           ))}
@@ -47,4 +49,8 @@ function Sidebar () {
   )
 }
 
-export default Sidebar
+Sidebar.propTypes = {
+  history: PropTypes.object
+}
+
+export default withRouter(Sidebar)
