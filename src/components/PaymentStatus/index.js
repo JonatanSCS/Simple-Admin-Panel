@@ -4,13 +4,17 @@ import { calculateDate } from '../../utils'
 
 import './styles.css'
 
-function PaymentStatus (props) {
-  console.log(props)
-  const { id, status, amount, nested_charges, created } = props
+function PaymentStatus ({
+  id,
+  status,
+  amount,
+  nested_charges,
+  created
+}) {
   const message = nested_charges[0]?.failure_message
 
   return (
-    <div className="DataCard">
+    <div className="DataCard" data-testid="PaymentStatusCard">
       <h2>Payment Status</h2>
       <div className="Container">
         <div className="Row">
@@ -23,7 +27,7 @@ function PaymentStatus (props) {
         </div>
         <div className="Row">
           <StatusLabel status={status} />
-          { message ? <p className="StatusMessage">{message}</p> : null }
+          { message ? <p className="StatusMessage" data-testid="StatusMaessage">{message}</p> : null }
         </div>
         <div className="Row">
           <div>

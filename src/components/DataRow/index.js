@@ -39,7 +39,7 @@ function DataRow ({ data, fields, path }) {
   }
 
   return (
-    <tr className="DataRow" height="70px">
+    <tr className="DataRow" height="70px" data-testid="DataRowContainer">
       <td>
         <NavLink to={`${path}/${data.id}`}>
           <img src={eyeImage} alt="payment detail" className="DetailImage" />

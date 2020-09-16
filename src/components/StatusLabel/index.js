@@ -12,7 +12,7 @@ function StatusLabel ({ status }) {
   }
 
   return (
-    <div className={`StatusLabel Status-${status}`}>
+    <div className={`StatusLabel Status-${status}`} data-testid="StatusLabelContainer">
       <p>{labels[status]}</p>
     </div>
   )
