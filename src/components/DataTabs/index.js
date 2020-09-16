@@ -5,10 +5,11 @@ import './styles.css'
 
 function DataTabs ({ tabs, active, handleTab }) {
   return (
-    <div className="DataTabs">
+    <div className="DataTabs" data-testid="DataTabsContainer">
       {tabs.map(({ id, label }) => {
         return (
           <button
+            data-testid="DataTabsButton"
             key={id}
             className={active === id ? 'Active' : ''}
             onClick={() => handleTab(id)}
