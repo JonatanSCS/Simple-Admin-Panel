@@ -1,4 +1,5 @@
 import payments from './mocks/payments'
+import detail from './mocks/detail'
 
 export const getPaymentsRecords = sortBy => {
   return new Promise((resolve) => {
@@ -8,9 +9,7 @@ export const getPaymentsRecords = sortBy => {
 
 export const getPaymentById = id => {
   return new Promise((resolve) => {
-    resolve(payments.data.payments.find(item => {
-      return item.id === id
-    }))
+    resolve(detail.data.payment)
   })
 }
 

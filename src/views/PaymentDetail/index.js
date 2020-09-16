@@ -3,33 +3,14 @@ import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 import { getPaymentById } from '../../services'
 import DataTabs from '../../components/DataTabs'
+import PaymentStatus from '../../components/PaymentStatus'
 
 import './styles.css'
-
-function DataView () {
-  return (
-    <div>
-      <h1>Data</h1>
-    </div>
-  )
-}
-
-function BreakdownView () {
-  return <h1>Breakdown</h1>
-}
 
 function PaymentDetail ({ match }) {
   const paymentId = match.params.id
   const [active, setActive] = useState('data')
-  const renderView = (view) => {
-    const views = {
-      data: DataView,
-      breakdown: BreakdownView
-    }
-    const View = views[view]
-
-    return <View />
-  }
+  const [payment, setPayment] = useState({})
   const tabs = [
     { id: 'data', label: 'Data' },
     { id: 'breakdown', label: 'Breakdown' }
@@ -38,7 +19,7 @@ function PaymentDetail ({ match }) {
   useEffect(() => {
     async function fetchData () {
       const payment = await getPaymentById(paymentId)
-      console.log(payment)
+      setPayment(payment)
     }
     fetchData()
   }, [])
@@ -48,7 +29,11 @@ function PaymentDetail ({ match }) {
       <h1>Payment detail</h1>
       <div className="Container">
         <DataTabs tabs={tabs} active={active} handleTab={setActive} />
-        {renderView(active)}
+        <div className="View">
+          <div>
+            { payment.id ? <PaymentStatus {...payment} /> : null}
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import { NavLink } from 'react-router-dom'
 
+import { calculateDate } from '../../utils'
+
 import StatusLabel from '../StatusLabel'
 import eyeImage from './assets/eye.svg'
 import visaImage from './assets/visa.svg'
@@ -23,26 +25,13 @@ function DataType ({ type, brand }) {
   )
 }
 
-function DataCreated ({ created }) {
-  const d = new Date(created)
-  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dec']
-  const day = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
-  const hour = `${d.getHours()}:${d.getMinutes()}`
-
-  return (
-    <div className="DataContainer">
-      <p>{day}</p><p>{hour}</p>
-    </div>
-  )
-}
-
 function DataRow ({ data, fields, path }) {
   const renderDataComponent = (field) => {
     const components = {
       status: <StatusLabel status={data.status} />,
       amount: <p>{`$ ${data.amount}`}</p>,
       customer: <div className="DataContainer"><p>{data.customer.name}</p><p>{data.customer.email}</p></div>,
-      created: <DataCreated created={data.created} />,
+      created: <div className="DataContainer"><p>{calculateDate(data.created)}</p></div>,
       type: <DataType type={data.type} brand={data.brand} />
     }
 
@@ -74,10 +63,6 @@ DataRow.propTypes = {
 DataType.propTypes = {
   type: PropTypes.string,
   brand: PropTypes.string
-}
-
-DataCreated.propTypes = {
-  created: PropTypes.number
 }
 
 export default DataRow
