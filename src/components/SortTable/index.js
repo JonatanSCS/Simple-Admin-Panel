@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 
 import DataRow from '../DataRow'
 
 import './styles.css'
 
-function SortTable ({ sorters, active, onChange, items }) {
+function SortTable ({ sorters, active, onChange, items }, { location }) {
   return (
     <div className="SortTable">
       <table>
@@ -29,6 +30,7 @@ function SortTable ({ sorters, active, onChange, items }) {
             <DataRow
               key={item.id}
               data={item}
+              path={useLocation().pathname}
               fields={sorters.map((sorter) => sorter.value)}
             />
           )}
