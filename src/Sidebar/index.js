@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { paths } from '../views'
 
+import routes from '../routes'
+
 import Dropdown from './Dropdown'
-import options from './options'
 import menuImage from './assets/menu.svg'
 import closeImage from './assets/close.svg'
 import logoImage from './assets/logo.jpg'
@@ -18,7 +19,6 @@ function Sidebar () {
         src={menuImage}
         alt="open menu"
         className="SidebarIcon"
-        onClick={() => setVisible(!visible)}
         data-testid="MenuMobileIcon"
       />
       <nav className={visible ? 'MenuVisible' : ''}>
@@ -35,14 +35,13 @@ function Sidebar () {
               <img src={logoImage} alt="Santa Cruz" />
             </Link>
           </li>
-          { options.map(item =>
+          { routes.map(route => route.key === 'home' ? null : (
             <Dropdown
-              key={item.id}
-              {...item}
-              closeSidebar={() => setVisible(false)}
+              {...route}
+              closeSidebar={() => useState(false)}
               data-testid="DropdownInstance"
             />
-          )}
+          ))}
         </ul>
       </nav>
     </div>

@@ -5,7 +5,7 @@ import { paths } from '../../views'
 
 import './styles.css'
 
-function Dropdown ({ id, label, items, closeSidebar }) {
+function Dropdown ({ id, label, items }) {
   const [visible, setVisible] = useState(false)
   return (
     <li className="Dropdown">
@@ -21,14 +21,7 @@ function Dropdown ({ id, label, items, closeSidebar }) {
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
         {items.map(({ id, label }) => (
           <li key={id} data-testid="DropdownItems">
-            <NavLink
-              to={paths[id]}
-              activeClassName="Active"
-              onClick={() => {
-                closeSidebar()
-                setVisible(false)
-              }}
-            >
+            <NavLink to={paths[id]} activeClassName="Active">
               {label}
             </NavLink>
           </li>

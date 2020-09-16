@@ -30,7 +30,6 @@ function Payments () {
     setPayments([])
     async function fetchData () {
       const payments = await getPaymentsRecords(sort)
-      console.log(payments)
       setPayments(payments)
     }
 
