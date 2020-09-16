@@ -1,6 +1,11 @@
 import Home from './views/Home'
 import Payments from './views/Payments'
 
+import generalImage from './assets/general.svg'
+import transactionsImage from './assets/transactions.svg'
+import accountingImage from './assets/accounting.svg'
+import developersImage from './assets/developers.svg'
+
 export default [
   {
     id: 'home',
@@ -10,6 +15,7 @@ export default [
   }, {
     id: 'general',
     label: 'General',
+    image: generalImage,
     items: [
       {
         id: 'generalOne',
@@ -24,6 +30,7 @@ export default [
   }, {
     id: 'transactions',
     label: 'Transactions',
+    image: transactionsImage,
     items: [
       {
         id: 'payments',
@@ -43,6 +50,7 @@ export default [
   }, {
     id: 'accounting',
     label: 'Accounting',
+    image: accountingImage,
     items: [
       {
         id: 'accountingOne',
@@ -57,6 +65,7 @@ export default [
   }, {
     id: 'developers',
     label: 'Developers',
+    image: developersImage,
     items: [
       {
         id: 'developersOne',

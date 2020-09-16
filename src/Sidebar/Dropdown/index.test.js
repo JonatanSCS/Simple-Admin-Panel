@@ -2,14 +2,27 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Dropdown from './index'
 
-const mockItems = [{
-  id: 'generalOne',
-  label: 'Item One'
-}, {
-  id: 'generalTwo',
-  label: 'Item Two'
-}]
-const wrapper = shallow(<Dropdown id="general" label="General" items={mockItems} />)
+const mockRoutes = {
+  id: 'developers',
+  label: 'Developers',
+  items: [
+    {
+      id: 'developersOne',
+      path: '/developers-one',
+      label: 'Developers One'
+    }, {
+      id: 'developersTwo',
+      path: '/developers-two',
+      label: 'Developers Two'
+    }, {
+      id: 'developersThree',
+      path: '/developers-three',
+      label: 'Developers Three'
+    }
+  ]
+}
+
+const wrapper = shallow(<Dropdown id="general" label="General" {...mockRoutes} />)
 test('Toggle items on header click', () => {
   let header = wrapper.find('[data-testid="DropdownHeader"]')
 
@@ -31,6 +44,6 @@ test('Toggle items on header click', () => {
 test('Render Correct data', () => {
   const header = wrapper.find('[data-testid="DropdownHeader"]')
   const items = wrapper.find('[data-testid="DropdownItems"]')
-  expect(header.text()).toEqual('General')
-  expect(items).toHaveLength(mockItems.length)
+  expect(header.text()).toEqual('Developers')
+  expect(items).toHaveLength(mockRoutes.items.length)
 })

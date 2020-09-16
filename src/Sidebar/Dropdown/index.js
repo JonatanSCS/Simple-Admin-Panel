@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import './styles.css'
 
-function Dropdown ({ id, label, items }) {
+function Dropdown ({ id, label, items, image }) {
   const [visible, setVisible] = useState(false)
   return (
     <li className="Dropdown">
@@ -14,7 +14,7 @@ function Dropdown ({ id, label, items }) {
         data-testid="DropdownHeader"
       >
         <span className="DropdownArrow" data-testid="DropdownArrow" />
-        <span className={`DropdownImage DropdownImage-${id} ${visible ? 'ImageActive' : ''}`} />
+        <img className ="DropdownImage" src={image} />
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
@@ -36,8 +36,10 @@ Dropdown.propTypes = {
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
-    label: PropTypes.string
-  }))
+    label: PropTypes.string,
+    path: PropTypes.string
+  })),
+  image: PropTypes.string
 }
 
 export default Dropdown

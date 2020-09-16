@@ -11,7 +11,7 @@ import Sidebar from './Sidebar'
 function renderRoutes (route) {
   const _route = { ...route }
   _route.component = route.component || Default
-  return route.items ? route.items.map(renderRoutes) : <Route {..._route} />
+  return route.items ? route.items.map(renderRoutes) : <Route key={_route.id} {..._route} />
 }
 
 const App = () => {

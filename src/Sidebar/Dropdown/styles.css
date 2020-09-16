@@ -55,27 +55,6 @@
   width: 20px;
   height: 20px;
   margin-right: 20px;
-  background-color: var(--inactive-color-light);
-}
-
-.DropdownImage-general {
-  -webkit-mask: url(./assets/general.svg) no-repeat center;
-  mask: url(./assets/general.svg) no-repeat center;
-}
-
-.DropdownImage-transactions {
-  -webkit-mask: url(./assets/transactions.svg) no-repeat center;
-  mask: url(./assets/transactions.svg) no-repeat center;
-}
-
-.DropdownImage-accounting {
-  -webkit-mask: url(./assets/accounting.svg) no-repeat center;
-  mask: url(./assets/accounting.svg) no-repeat center;
-}
-
-.DropdownImage-developers {
-  -webkit-mask: url(./assets/developers.svg) no-repeat center;
-  mask: url(./assets/developers.svg) no-repeat center;
 }
 
 .Dropdown ul li a {
@@ -87,6 +66,7 @@
 /* Active Status */
 .Dropdown .DropdownActive {
   border-left: 4px solid var(--active-color-dark);
+  color: var(--active-color-dark);
 }
 
 .Dropdown .DropdownActive:hover {
@@ -97,10 +77,6 @@
 .Dropdown .DropdownActive .DropdownArrow {
   background-color: var(--active-color-dark);
   transform: rotate(180deg);
-}
-
-.Dropdown p .ImageActive {
-  background-color: var(--active-color-dark);
 }
 
 .Menu li a.Active {
