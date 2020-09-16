@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Sidebar from './index'
-import options from './options'
+import routes from '../routes'
 
 const wrapper = shallow(<Sidebar />)
 test('Sidebar opens and close on icons clicks', () => {
@@ -15,7 +15,7 @@ test('Sidebar opens and close on icons clicks', () => {
 })
 
 test('Sidebar render complete Dropdowns', () => {
-  const optionsCount = options.length
+  const optionsCount = routes.length - 1
   const dropdowns = wrapper.find('[data-testid="DropdownInstance"]')
   expect(dropdowns).toHaveLength(optionsCount)
 })

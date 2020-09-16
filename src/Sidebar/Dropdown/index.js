@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import { paths } from '../../views'
 
 import './styles.css'
 
-function Dropdown ({ id, label, items, closeSidebar }) {
+function Dropdown ({ id, label, items, image }) {
   const [visible, setVisible] = useState(false)
   return (
     <li className="Dropdown">
@@ -15,20 +14,13 @@ function Dropdown ({ id, label, items, closeSidebar }) {
         data-testid="DropdownHeader"
       >
         <span className="DropdownArrow" data-testid="DropdownArrow" />
-        <span className={`DropdownImage DropdownImage-${id} ${visible ? 'ImageActive' : ''}`} />
+        <img className ="DropdownImage" src={image} />
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
-        {items.map(({ id, label }) => (
+        {items.map(({ id, label, path }) => (
           <li key={id} data-testid="DropdownItems">
-            <NavLink
-              to={paths[id]}
-              activeClassName="Active"
-              onClick={() => {
-                closeSidebar()
-                setVisible(false)
-              }}
-            >
+            <NavLink to={path} activeClassName="Active">
               {label}
             </NavLink>
           </li>
@@ -44,8 +36,10 @@ Dropdown.propTypes = {
   label: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
-    label: PropTypes.string
-  }))
+    label: PropTypes.string,
+    path: PropTypes.string
+  })),
+  image: PropTypes.string
 }
 
 export default Dropdown

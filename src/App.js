@@ -4,21 +4,17 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import views, { components, paths } from './views'
-
+import routes from './routes'
+import Default from './views/Default'
 import Sidebar from './Sidebar'
 
-function renderRoutes (view) {
-  const View = components[view] || components.default
-  return (
-    <Route key={view} path={paths[view]}>
-      <View />
-    </Route>
-  )
+function renderRoutes (route) {
+  const _route = { ...route }
+  _route.component = route.component || Default
+  return route.items ? route.items.map(renderRoutes) : <Route key={_route.id} {..._route} />
 }
 
 const App = () => {
-  const Home = components.home
   return (
     <div id="AppAdminPanel">
       <Router>
@@ -26,10 +22,7 @@ const App = () => {
         <div className="MainContainer">
           <div>
             <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              { views.map(renderRoutes) }
+              { routes.map(renderRoutes) }
             </Switch>
           </div>
         </div>
