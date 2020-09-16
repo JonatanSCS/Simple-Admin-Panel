@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import StatusLabel from '../StatusLabel'
 import { calculateDate } from '../../utils'
 
@@ -37,6 +39,14 @@ function PaymentStatus ({
       </div>
     </div>
   )
+}
+
+PaymentStatus.propTypes = {
+  id: PropTypes.string,
+  status: PropTypes.string,
+  ammount: PropTypes.number,
+  nested_charges: PropTypes.array,
+  created: PropTypes.number
 }
 
 export default PaymentStatus
