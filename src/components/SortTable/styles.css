@@ -1,6 +1,5 @@
 .SortTable {
   overflow: scroll;
-  margin: 15px 0;
   background: #fff;
   max-width: 1024px;
 }
@@ -43,7 +42,7 @@ th:after {
   display: none;
 }
 
-th:first-child:after {
+.FirstHeader:after {
   display: none;
   content: '';
 }

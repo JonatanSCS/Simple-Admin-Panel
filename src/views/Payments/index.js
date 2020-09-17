@@ -47,6 +47,7 @@ function Payments () {
         active={sort}
         onChange={setSort}
         items={payments}
+        viewed
       />
     </div>
   )

@@ -6,13 +6,13 @@ import DataRow from '../DataRow'
 
 import './styles.css'
 
-function SortTable ({ sorters, active, onChange, items }, { location }) {
+function SortTable ({ sorters, active, onChange, items, viewed }, { location }) {
   return (
     <div className="SortTable">
       <table>
         <thead>
           <tr>
-            <th></th>
+            { viewed && <th className="FirstHeader"></th> }
             {sorters.map(({ value, label }) =>
               <th
                 key={value}
@@ -32,6 +32,7 @@ function SortTable ({ sorters, active, onChange, items }, { location }) {
               data={item}
               path={useLocation().pathname}
               fields={sorters.map((sorter) => sorter.value)}
+              viewed={viewed}
             />
           )}
         </tbody>
@@ -47,7 +48,8 @@ SortTable.propTypes = {
     value: PropTypes.string,
     label: PropTypes.string
   })),
-  items: PropTypes.array
+  items: PropTypes.array,
+  viewed: PropTypes.bool
 }
 
 export default SortTable
