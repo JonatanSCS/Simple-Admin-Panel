@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
-import { getPaymentById, sortByField } from '../../services'
-import DataTabs from '../../components/DataTabs'
-import PaymentStatus from '../../components/PaymentStatus'
-import ClientCard from '../../components/ClientCard'
-import PaymentMethod from '../../components/PaymentMethod'
-import SortTable from '../../components/SortTable'
+import { getPaymentById, sortByField } from 'services'
+import DataTabs from 'components/DataTabs'
+import PaymentStatus from 'components/PaymentStatus'
+import ClientCard from 'components/ClientCard'
+import PaymentMethod from 'components/PaymentMethod'
+import SortTable from 'components/SortTable'
 
 import './styles.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import SortTable from './index'
-import payments from '../../mocks/payments'
+import payments from 'mocks/payments'
 
 const items = [{
   value: 'date',

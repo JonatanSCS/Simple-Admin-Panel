@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import StatusLabel from '../StatusLabel'
+import StatusLabel from 'components/StatusLabel'
 import { calculateDate } from '../../utils'
 
 import './styles.css'

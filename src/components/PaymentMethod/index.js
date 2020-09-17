@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import './styles.css'
 
-import visaImage from '../../assets/brands/visa.svg'
-import americanImage from '../../assets/brands/american.svg'
+import visaImage from 'assets/brands/visa.svg'
+import americanImage from 'assets/brands/american.svg'
 
 function PaymentMethod ({
   bank,

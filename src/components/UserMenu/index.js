@@ -15,6 +15,7 @@ function UserMenu () {
     label: 'Cerrar sesión',
     path: '/'
   }]
+
   return (
     <div className="UserContainer" data-testid="UserContainer">
       <div className="UserData" onClick={() => setMenuVisible(!menuVisible)} data-testid="UserDataContainer">
@@ -22,21 +23,21 @@ function UserMenu () {
         <p><span>User name</span> Conekta Admin</p>
         <p />
       </div>
-      { menuVisible ? (
+      { menuVisible && (
         <ul className="UserMenu" data-testid="UserMenuContainer">
-          {links.map(({ id, label, path }) => {
+          {links.map(({ id, label, path }) => (
             <li key={id}>
               <Link
-                to="/"
+                to={path}
                 onClick={() => setMenuVisible(false)}
                 data-testid="UserMenuLink"
               >
-                Perfil
+                {label}
               </Link>
             </li>
-          })}
+          ))}
         </ul>
-      ): null}
+      )}
     </div>
   )
 }

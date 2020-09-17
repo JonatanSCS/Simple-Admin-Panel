@@ -3,7 +3,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import PaymentStatus from './index'
 
-import detail from '../../mocks/detail'
+import detail from 'mocks/detail'
 
 test('Payment Status Card renders correctly', () => {
   const wrapper = shallow(<PaymentStatus {...detail.data.payment} />)

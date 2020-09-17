@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import detail from '../../mocks/detail'
+import detail from 'mocks/detail'
 import PaymentMethod from './index'
 
 test('Payment Method component renders correctly', () => {

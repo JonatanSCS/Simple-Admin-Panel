@@ -15,4 +15,8 @@ test('User data open menu and link click close menu', () => {
   expect(userMenu.exists()).toBe(false)
   userData.simulate('click')
   expect(userMenu.exists())
+  wrapper.update()
+  const userMenuLink = wrapper.find('[data-testid="UserMenuLink"]').first()
+  userMenuLink.simulate('click')
+  expect(userMenu.exists()).toBe(false)
 })

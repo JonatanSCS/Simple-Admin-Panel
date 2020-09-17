@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom'
 
 import { calculateDate } from '../../utils'
 
-import StatusLabel from '../StatusLabel'
+import StatusLabel from 'components/StatusLabel'
 import eyeImage from './assets/eye.svg'
-import visaImage from '../../assets/brands/visa.svg'
-import americanImage from '../../assets/brands/american.svg'
+import visaImage from 'assets/brands/visa.svg'
+import americanImage from 'assets/brands/american.svg'
 
 import './styles.css'
 

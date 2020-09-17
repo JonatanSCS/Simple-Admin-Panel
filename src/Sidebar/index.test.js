@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { TestSidebar } from './index'
-import routes from '../routes'
+import routes from 'routes'
 
 const wrapper = shallow(<TestSidebar test />)
 test('Sidebar opens and close on icons clicks', () => {

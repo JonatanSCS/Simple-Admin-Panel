@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import { getPaymentsRecords } from '../../services'
+import { getPaymentsRecords } from 'services'
 
 import './styles.css'
-import Select from '../../components/Select'
-import SortTable from '../../components/SortTable'
+import Select from 'components/Select'
+import SortTable from 'components/SortTable'
 
 function Payments () {
   const [sort, setSort] = useState('created')
