@@ -1,7 +1,6 @@
 .Dropdown {
   --active-color-light: #EAF8F9;
   --inactive-color-dark: #000;
-  --inactive-color-light: #BCBCBC;
 }
 
 .Dropdown .Menu {
