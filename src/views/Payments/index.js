@@ -26,6 +26,7 @@ function Payments () {
     label: 'Amount'
   }]
 
+  /* istanbul ignore next */
   useEffect(() => {
     setPayments([])
     async function fetchData () {

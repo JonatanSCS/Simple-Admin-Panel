@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import DataRow from './index'
 
 const mock = {
@@ -23,7 +23,7 @@ const mock = {
 const fields = ['created', 'date', 'type']
 
 test('Render Row correctly', () => {
-  const wrapper = shallow(
+  const wrapper = mount(
     <Router>
       <table>
         <thead>

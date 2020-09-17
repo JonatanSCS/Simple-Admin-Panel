@@ -6,6 +6,7 @@ import './styles.css'
 
 function Dropdown ({ history, label, items, image, test }) {
   const [visible, setVisible] = useState(false)
+  /* istanbul ignore next */
   !test && history.listen(() => setVisible(false))
   return (
     <li className="Dropdown">

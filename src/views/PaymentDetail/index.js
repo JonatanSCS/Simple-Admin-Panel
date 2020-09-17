@@ -10,7 +10,7 @@ import SortTable from '../../components/SortTable'
 
 import './styles.css'
 
-function PaymentNavigation ({ payments }) {
+export function PaymentNavigation ({ payments }) {
   const [active, setActive] = useState('payment_attempt')
   const [sort, setSort] = useState('created')
   const [items, setItems] = useState(sortByField(payments, sort))
@@ -57,7 +57,7 @@ function PaymentNavigation ({ payments }) {
   }
 
   return (
-    <div className="DataCard PaymentNavigation">
+    <div className="DataCard PaymentNavigation" data-testid="PaymentNavigation">
       <DataTabs tabs={tabs} active={active} handleTab={setActive} />
       {renderView(active)}
     </div>
@@ -81,7 +81,7 @@ function PaymentDetail ({ match }) {
     fetchData()
   }, [])
   return (
-    <div className="PaymentDetail ViewContainer">
+    <div className="PaymentDetail ViewContainer" data-testid="PaymentDetailContainer">
       <h1>Payment detail</h1>
       <div className="Container">
         <DataTabs tabs={tabs} active={active} handleTab={setActive} />
@@ -114,4 +114,5 @@ PaymentNavigation.propTypes = {
   payments: PropTypes.array
 }
 
+export const PaymentDetailTest = PaymentDetail
 export default withRouter(PaymentDetail)

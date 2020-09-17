@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import payments from './mocks/payments'
 import detail from './mocks/detail'
 
