@@ -5,6 +5,7 @@ import { getPaymentById } from '../../services'
 import DataTabs from '../../components/DataTabs'
 import PaymentStatus from '../../components/PaymentStatus'
 import ClientCard from '../../components/ClientCard'
+import PaymentMethod from '../../components/PaymentMethod'
 
 import './styles.css'
 
@@ -31,9 +32,14 @@ function PaymentDetail ({ match }) {
         <DataTabs tabs={tabs} active={active} handleTab={setActive} />
         { payment.id ? (
           <div className="View">
-            <div>
+            <div className="PaymentContainer PaymentStatusContainer">
               <PaymentStatus {...payment} />
+            </div>
+            <div className="PaymentContainer ClientCardContainer">
               <ClientCard {...payment.customer} />
+            </div>
+            <div className="PaymentContainer PaymentMethodContainer">
+              <PaymentMethod {...payment.nested_charges[0].payment_method}/>
             </div>
           </div>
         ) : null}

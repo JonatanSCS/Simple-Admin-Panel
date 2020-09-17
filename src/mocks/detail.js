@@ -48,7 +48,7 @@ export default {
             reference: null,
             reference_number: '70619',
             tracking_code: 'BNET01001906070001501285',
-            type: 'credi'
+            type: 'credit'
           },
           failure: 'insufficient_funds',
           failure_message: 'Esta tarjeta no tiene suficientes fondos para completar la compra.',
