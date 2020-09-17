@@ -44,7 +44,7 @@ function PaymentStatus ({
 PaymentStatus.propTypes = {
   id: PropTypes.string,
   status: PropTypes.string,
-  ammount: PropTypes.number,
+  amount: PropTypes.number,
   nested_charges: PropTypes.array,
   created: PropTypes.number
 }

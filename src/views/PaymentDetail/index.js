@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { getPaymentById } from '../../services'
 import DataTabs from '../../components/DataTabs'
 import PaymentStatus from '../../components/PaymentStatus'
+import ClientCard from '../../components/ClientCard'
 
 import './styles.css'
 
@@ -23,17 +24,19 @@ function PaymentDetail ({ match }) {
     }
     fetchData()
   }, [])
-
   return (
     <div className="PaymentDetail ViewContainer">
       <h1>Payment detail</h1>
       <div className="Container">
         <DataTabs tabs={tabs} active={active} handleTab={setActive} />
-        <div className="View">
-          <div>
-            { payment.id ? <PaymentStatus {...payment} /> : null}
+        { payment.id ? (
+          <div className="View">
+            <div>
+              <PaymentStatus {...payment} />
+              <ClientCard {...payment.customer} />
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   )
