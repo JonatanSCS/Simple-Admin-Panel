@@ -7,8 +7,8 @@ import { calculateDate } from '../../utils'
 
 import StatusLabel from '../StatusLabel'
 import eyeImage from './assets/eye.svg'
-import visaImage from './assets/visa.svg'
-import americanImage from './assets/american.svg'
+import visaImage from '../../assets/brands/visa.svg'
+import americanImage from '../../assets/brands/american.svg'
 
 import './styles.css'
 

@@ -26,17 +26,3 @@
   display: inline-block;
   border-bottom: 2px solid #C9D0D7;
 }
-
-@media (min-width: 768px) {
-  /* .DataTabs button {
-    width: 33%;
-  } */
-}
-
-
-@media (min-width: 1024px) {
-  /* .DataTabs button {
-    width: 20%;
-  } */
-
-}

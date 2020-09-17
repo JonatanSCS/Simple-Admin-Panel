@@ -3,5 +3,32 @@
 }
 
 .PaymentDetail .Container .View {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.PaymentStatusContainer, .ClientCardContainer, .PaymentMethodContainer {
+  width: 100%;
   margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .ClientCardContainer, .PaymentMethodContainer {
+    width: 49%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .PaymentStatusContainer, .ClientCardContainer, .PaymentMethodContainer {
+    max-height: 200px;
+  }
+
+  .PaymentStatusContainer {
+    width: 50%;
+  }
+
+  .ClientCardContainer, .PaymentMethodContainer {
+    width: 24%;
+  }
 }

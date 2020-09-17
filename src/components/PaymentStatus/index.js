@@ -16,7 +16,7 @@ function PaymentStatus ({
   const message = nested_charges[0]?.failure_message
 
   return (
-    <div className="DataCard" data-testid="PaymentStatusCard">
+    <div className="DataCard PaymentStatus" data-testid="PaymentStatusCard">
       <h2>Payment Status</h2>
       <div className="Container">
         <div className="Row">
