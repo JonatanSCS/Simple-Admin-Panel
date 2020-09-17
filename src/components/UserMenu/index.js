@@ -6,23 +6,37 @@ import './styles.css'
 
 function UserMenu () {
   const [menuVisible, setMenuVisible] = useState(false)
+  const links = [{
+    id: 'perfil',
+    label: 'Perfil',
+    path: '/'
+  }, {
+    id: 'close',
+    label: 'Cerrar sesión',
+    path: '/'
+  }]
   return (
-    <div className="UserContainer">
-      <div className="UserData" onClick={() => setMenuVisible(!menuVisible)}>
+    <div className="UserContainer" data-testid="UserContainer">
+      <div className="UserData" onClick={() => setMenuVisible(!menuVisible)} data-testid="UserDataContainer">
         <img src={userImage} alt="User Image" />
         <p><span>User name</span> Conekta Admin</p>
         <p />
       </div>
-      { menuVisible && (
-        <ul className="UserMenu">
-          <li>
-            <Link to="/" onClick={() => setMenuVisible(false)}>Perfil</Link>
-          </li>
-          <li>
-            <Link to="/" onClick={() => setMenuVisible(false)}>Cerrar sesión</Link>
-          </li>
+      { menuVisible ? (
+        <ul className="UserMenu" data-testid="UserMenuContainer">
+          {links.map(({ id, label, path }) => {
+            <li key={id}>
+              <Link
+                to="/"
+                onClick={() => setMenuVisible(false)}
+                data-testid="UserMenuLink"
+              >
+                Perfil
+              </Link>
+            </li>
+          })}
         </ul>
-      )}
+      ): null}
     </div>
   )
 }
