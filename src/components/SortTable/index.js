@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
 
-import DataRow from '../DataRow'
+import DataRow from 'components/DataRow'
 
 import './styles.css'
 

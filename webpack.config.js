@@ -16,5 +16,14 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true
+  },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components/'),
+      assets: path.resolve(__dirname, 'src/assets/'),
+      mocks: path.resolve(__dirname, 'src/mocks/'),
+      services: path.resolve(__dirname, 'src/services.js'),
+      routes: path.resolve(__dirname, 'src/routes.js')
+    }
   }
 }
