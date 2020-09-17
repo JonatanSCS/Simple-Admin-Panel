@@ -25,14 +25,15 @@ function DataType ({ type, brand }) {
   )
 }
 
-function DataRow ({ data, fields, path }) {
+function DataRow ({ data, fields, path, viewed = false }) {
   const renderDataComponent = (field) => {
     const components = {
       status: <StatusLabel status={data.status} />,
       amount: <p>{`$ ${data.amount}`}</p>,
-      customer: <div className="DataContainer"><p>{data.customer.name}</p><p>{data.customer.email}</p></div>,
+      customer: <div className="DataContainer"><p>{data?.customer?.name}</p><p>{data?.customer?.email}</p></div>,
       created: <div className="DataContainer"><p>{calculateDate(data.created)}</p></div>,
-      type: <DataType type={data.type} brand={data.brand} />
+      type: <DataType type={data.type} brand={data.brand} />,
+      payment_method: <DataType type={data?.payment_method?.type} brand={data?.payment_method?.brand} />
     }
 
     return components[field] || <p>{data[field]}</p>
@@ -40,11 +41,13 @@ function DataRow ({ data, fields, path }) {
 
   return (
     <tr className="DataRow" height="70px" data-testid="DataRowContainer">
-      <td>
-        <NavLink to={`${path}/${data.id}`}>
-          <img src={eyeImage} alt="payment detail" className="DetailImage" />
-        </NavLink>
-      </td>
+      { viewed && (
+        <td>
+          <NavLink to={`${path}/${data.id}`}>
+            <img src={eyeImage} alt="payment detail" className="DetailImage" />
+          </NavLink>
+        </td>
+      )}
       {fields.map((field) =>
         <td key={field}>
           {renderDataComponent(field)}
@@ -57,7 +60,8 @@ function DataRow ({ data, fields, path }) {
 DataRow.propTypes = {
   data: PropTypes.object.isRequired,
   fields: PropTypes.array.isRequired,
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
+  viewed: PropTypes.bool
 }
 
 DataType.propTypes = {

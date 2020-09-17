@@ -26,6 +26,7 @@ function Payments () {
     label: 'Amount'
   }]
 
+  /* istanbul ignore next */
   useEffect(() => {
     setPayments([])
     async function fetchData () {
@@ -47,6 +48,7 @@ function Payments () {
         active={sort}
         onChange={setSort}
         items={payments}
+        viewed
       />
     </div>
   )

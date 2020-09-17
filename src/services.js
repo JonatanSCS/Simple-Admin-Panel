@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import payments from './mocks/payments'
 import detail from './mocks/detail'
 
@@ -25,8 +27,9 @@ export function sortByField (list, field) {
     string: sortAlphabetically
   }
   const exceptions = {
-    customer: list.sort((a, b) => a.customer.name > b.customer.name ? 1 : -1),
+    customer: list.sort((a, b) => a?.customer?.name > b?.customer?.name ? 1 : -1),
     type: list.sort((a, b) => a.brand > b.brand ? -1 : 1),
+    payment_method: list.sort((a, b) => a?.payment_method?.brand > b?.payment_method?.brand ? -1 : 1)
   }
 
   return exceptions[field] || list.sort((a, b) => sorters[type](a, b, field))

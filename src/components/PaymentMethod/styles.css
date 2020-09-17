@@ -24,6 +24,9 @@
   text-align: center;
   margin-right: 20px;
   text-transform: capitalize;
+}
+
+.PaymentMethod .PaymentBrand p {
   font-size: 12px;
 }
 

@@ -12,6 +12,7 @@ import './styles.css'
 
 function Sidebar ({ history, test }) {
   const [visible, setVisible] = useState(false)
+  /* istanbul ignore next */
   !test && history.listen(() => setVisible(false))
   return (
     <div className="Sidebar">

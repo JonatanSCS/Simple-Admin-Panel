@@ -2,18 +2,30 @@
   margin: 20px 0;
 }
 
+h3 {
+  margin: 10px;
+}
+
 .PaymentDetail .Container .View {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.PaymentStatusContainer, .ClientCardContainer, .PaymentMethodContainer {
+.PaymentStatusContainer,
+.ClientCardContainer,
+.PaymentMethodContainer,
+.PaymentNavigationContainer {
   width: 100%;
   margin: 20px 0;
 }
 
+.PaymentNavigation {
+  overflow: hidden;
+}
+
 @media (min-width: 768px) {
+
   .ClientCardContainer, .PaymentMethodContainer {
     width: 49%;
   }
@@ -30,5 +42,9 @@
 
   .ClientCardContainer, .PaymentMethodContainer {
     width: 24%;
+  }
+
+  .PaymentNavigationContainer {
+    width: 75%;
   }
 }
