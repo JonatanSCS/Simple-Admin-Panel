@@ -1,0 +1,56 @@
+.UserContainer {
+  position: relative;
+}
+
+.UserData {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.UserData img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.UserData p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.UserData p:last-child::after {
+  content: '\25BC';
+}
+
+.UserData p:last-child {
+  display: flex;
+  font-size: 8px;
+  padding: 10px 15px 0;
+  color: var(--inactive-color-light);
+}
+
+.UserData p span {
+  display: block;
+  font-size: 12px;
+  color: var(--inactive-color-light);
+  margin-bottom: 5px;
+}
+
+.UserMenu {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 10px;
+}
+
+.UserMenu li {
+  padding: 15px;
+}
+
+.UserMenu li a {
+  color: #000;
+  width: 100%;
+  height: 100%;
+}
