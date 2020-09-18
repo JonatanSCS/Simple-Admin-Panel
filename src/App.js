@@ -34,7 +34,11 @@ const App = () => {
         <div className="MainContainer">
           <Switch>
             { flatRoutes(routes).map(renderRoutes) }
-            <Route to="*" exact><h1>Not Found</h1></Route>
+            <Route to="*" exact>
+              <div className="ViewContainer">
+                <h1>Not Found</h1>
+              </div>
+            </Route>
           </Switch>
         </div>
       </Router>
