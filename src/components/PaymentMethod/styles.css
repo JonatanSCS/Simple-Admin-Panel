@@ -3,6 +3,7 @@
   position: relative;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 225px;
 }
 
 .PaymentMethod p {
@@ -69,4 +70,10 @@
 
 .PaymentMetadata p span {
   font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .PaymentMethod {
+    height: 100%;
+  }
 }
