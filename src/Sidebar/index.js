@@ -7,7 +7,6 @@ import routes from 'routes'
 import Dropdown from './Dropdown'
 import menuImage from './assets/menu.svg'
 import closeImage from './assets/close.svg'
-import logoImage from './assets/logo.jpg'
 import './styles.css'
 
 function Sidebar ({ history, test }) {
@@ -34,7 +33,7 @@ function Sidebar ({ history, test }) {
         <ul>
           <li className="Hero">
             <Link to="/">
-              <img src={logoImage} alt="Santa Cruz" />
+              Santa Cruz
             </Link>
           </li>
           { routes.map(route => route.id === 'home' ? null : (
