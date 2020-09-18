@@ -17,10 +17,16 @@ nav {
 .Hero {
   height: 100px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Hero img {
-  width: 100px;
+.Hero a {
+  font-family: 'Courgette', cursive;
+  color: black;
+  letter-spacing: 4px;
+  font-size: 40px;
 }
 
 .CloseIcon {

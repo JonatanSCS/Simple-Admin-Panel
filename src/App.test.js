@@ -1,8 +1,8 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import App from './App'
 
 test('Page render successfully', () => {
-  const wrapper = mount(<App />)
+  const wrapper = shallow(<App />)
   expect(wrapper.find('#AppAdminPanel').exists())
 })

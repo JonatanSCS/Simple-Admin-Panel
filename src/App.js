@@ -32,12 +32,10 @@ const App = () => {
           </header>
         </div>
         <div className="MainContainer">
-          <div>
-            <Switch>
-              { flatRoutes(routes).map(renderRoutes) }
-              <Route to="*" exact><h1>Not Found</h1></Route>
-            </Switch>
-          </div>
+          <Switch>
+            { flatRoutes(routes).map(renderRoutes) }
+            <Route to="*" exact><h1>Not Found</h1></Route>
+          </Switch>
         </div>
       </Router>
     </div>
