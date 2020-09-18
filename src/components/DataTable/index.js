@@ -6,15 +6,15 @@ function DataTable ({ headers, items }) {
     return headers.map(({ id }) => <td key={`${id}-${item.label}`}>{item[id]}</td>)
   }
   return (
-    <div className="DataTable">
+    <div className="DataTable" data-testid="DataTableContainer">
       <table>
         <thead>
           <tr>
-            {headers.map(({ id, label }) => <th key={id}>{label}</th>)}
+            {headers.map(({ id, label }) => <th key={id} data-testid="DataTableHead">{label}</th>)}
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => <tr key={`row-${item.label}-${index}`}>{renderItem(item)}</tr>)}
+          {items.map((item, index) => <tr key={`row-${item.label}-${index}`} data-testid="DataTableItem">{renderItem(item)}</tr>)}
         </tbody>
       </table>
     </div>

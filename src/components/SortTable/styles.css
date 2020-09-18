@@ -42,9 +42,8 @@
   display: none;
 }
 
-.FirstHeader:after {
-  display: none;
-  content: '';
+.FirstHeader {
+  visibility: hidden;
 }
 
 .SortTable tbody tr:nth-child(2n - 1) {
