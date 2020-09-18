@@ -24,10 +24,41 @@ h3 {
   overflow: hidden;
 }
 
+.Breakdown {
+  background: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+}
+
+.BreakdownData {
+  padding: 10px;
+  text-align: right;
+  width: 100%;
+}
+
+.BreakdownData p {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.BreakdownData p span {
+  margin-left: 40px;
+}
+
+.BreakdownData p:last-child {
+  font-weight: 500;
+  font-size: 16px;
+}
+
 @media (min-width: 768px) {
 
   .ClientCardContainer, .PaymentMethodContainer {
     width: 49%;
+  }
+
+  .BreakdownData p:last-child {
+    font-weight: 500;
+    font-size: 20px;
   }
 }
 

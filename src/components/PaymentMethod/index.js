@@ -20,6 +20,7 @@ function PaymentMethod ({
     visa: visaImage,
     american_express: americanImage
   }
+
   return (
     <div className="DataCard PaymentMethod" data-testid="PaymentMethodContainer">
       <h2>Payment Method</h2>

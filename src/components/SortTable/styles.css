@@ -9,13 +9,13 @@
   color: var(--active-color-dark);
 }
 
-table {
+.SortTable table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
 
-th, td {
+.SortTable th, td {
   text-align: left;
   padding: 15px 10px 0;
   height: 30px;
@@ -23,14 +23,14 @@ th, td {
   font-weight: 400;
 }
 
-th {
+.SortTable th {
   white-space: nowrap;
   font-weight: 300;
   min-width: 100px;
   cursor: pointer;
 }
 
-th:after {
+.SortTable th:after {
   content: '\25BC';
   padding: 0 15px;
   cursor: pointer;
@@ -47,16 +47,16 @@ th:after {
   content: '';
 }
 
-tbody tr:nth-child(2n - 1) {
+.SortTable tbody tr:nth-child(2n - 1) {
   background: #F8F9FA;
 }
 
-tbody tr td:first-child {
+.SortTable tbody tr td:first-child {
   text-align: center;
 }
 
 @media (min-width: 1024px) {
-  th:after {
+  .SortTable th:after {
     display: inline;
   }
 

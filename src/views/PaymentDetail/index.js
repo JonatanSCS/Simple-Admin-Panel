@@ -7,6 +7,7 @@ import PaymentStatus from 'components/PaymentStatus'
 import ClientCard from 'components/ClientCard'
 import PaymentMethod from 'components/PaymentMethod'
 import SortTable from 'components/SortTable'
+import DataTable from 'components/DataTable'
 
 import './styles.css'
 
@@ -64,6 +65,55 @@ export function PaymentNavigation ({ payments }) {
   )
 }
 
+function renderView (active, payment) {
+  const items = payment.line_items
+  const fee = payment.nested_charges[0].fee
+  const headers = [
+    { id: 'sku', label: 'SKU' },
+    { id: 'quantity', label: 'Quantity' },
+    { id: 'name', label: 'Articles' },
+    { id: 'taxes', label: 'Taxes' },
+    { id: 'shipping', label: 'Shipping' },
+    { id: 'discounts', label: 'Discounts' },
+    { id: 'unit_price', label: 'Unit Price' }
+  ]
+  const payMethod = payment.nested_charges[0].payment_method
+  const subtotal = () => {
+    let sum = 0
+    items.forEach(({ unit_price, quantity }) => {
+      sum += unit_price * quantity
+    })
+
+    return sum - fee
+  }
+
+  return active === 'data' ? (
+    <div className="View">
+      <div className="PaymentContainer PaymentStatusContainer">
+        <PaymentStatus {...payment} />
+      </div>
+      <div className="PaymentContainer ClientCardContainer">
+        <ClientCard {...payment.customer} />
+      </div>
+      <div className="PaymentContainer PaymentMethodContainer">
+        <PaymentMethod {...payMethod}/>
+      </div>
+      <div className="PaymentContainer PaymentNavigationContainer">
+        <PaymentNavigation payments={[...payment.nested_charges]}/>
+      </div>
+    </div>
+  ) : (
+    <div className="View Breakdown">
+      <DataTable headers={headers} items={items} />
+      <div className="BreakdownData">
+        <p>Subtotal <span>$ {subtotal()}</span></p>
+        <p>Fee <span>$ {fee}</span></p>
+        <p>Total <span>$ {subtotal() + fee}</span></p>
+      </div>
+    </div>
+  )
+}
+
 function PaymentDetail ({ match }) {
   const paymentId = match.params.id
   const [active, setActive] = useState('data')
@@ -80,27 +130,13 @@ function PaymentDetail ({ match }) {
     }
     fetchData()
   }, [])
+
   return (
     <div className="PaymentDetail ViewContainer" data-testid="PaymentDetailContainer">
       <h1>Payment detail</h1>
       <div className="Container">
         <DataTabs tabs={tabs} active={active} handleTab={setActive} />
-        { payment.id ? (
-          <div className="View">
-            <div className="PaymentContainer PaymentStatusContainer">
-              <PaymentStatus {...payment} />
-            </div>
-            <div className="PaymentContainer ClientCardContainer">
-              <ClientCard {...payment.customer} />
-            </div>
-            <div className="PaymentContainer PaymentMethodContainer">
-              <PaymentMethod {...payment.nested_charges[0].payment_method}/>
-            </div>
-            <div className="PaymentContainer PaymentNavigationContainer">
-              <PaymentNavigation payments={payment.nested_charges}/>
-            </div>
-          </div>
-        ) : null}
+        { payment.id ? renderView(active, payment) : null}
       </div>
     </div>
   )

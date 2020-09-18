@@ -1,5 +1,6 @@
 .UserContainer {
   position: relative;
+  z-index: 9;
 }
 
 .UserData {
@@ -45,12 +46,10 @@
   margin-top: 10px;
 }
 
-.UserMenu li {
-  padding: 15px;
-}
-
 .UserMenu li a {
   color: #000;
   width: 100%;
   height: 100%;
+  padding: 15px;
+  display: block;
 }

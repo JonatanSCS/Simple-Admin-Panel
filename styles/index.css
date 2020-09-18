@@ -31,6 +31,10 @@ body {
   padding-bottom: 5px;
 }
 
+h1 {
+  margin: 0 0 20px ;
+}
+
 @media (min-width: 1024px) {
   .MainContainer {
     margin-left: 300px;
