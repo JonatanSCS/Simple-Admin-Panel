@@ -89,16 +89,16 @@ function renderView (active, payment) {
 
   return active === 'data' ? (
     <div className="View">
-      <div className="PaymentContainer PaymentStatusContainer">
+      <div className="PaymentStatusContainer">
         <PaymentStatus {...payment} />
       </div>
-      <div className="PaymentContainer ClientCardContainer">
+      <div className="ClientCardContainer">
         <ClientCard {...payment.customer} />
       </div>
-      <div className="PaymentContainer PaymentMethodContainer">
+      <div className="PaymentMethodContainer">
         <PaymentMethod {...payMethod}/>
       </div>
-      <div className="PaymentContainer PaymentNavigationContainer">
+      <div className="PaymentNavigationContainer">
         <PaymentNavigation payments={[...payment.nested_charges]}/>
       </div>
     </div>

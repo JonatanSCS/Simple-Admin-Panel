@@ -32,9 +32,7 @@ function PaymentStatus ({
           { message ? <p className="StatusMessage" data-testid="StatusMaessage">{message}</p> : null }
         </div>
         <div className="Row">
-          <div>
-            <p className="Order"><span>Order ID: </span> {id}</p>
-          </div>
+          <p className="Order"><span>Order ID: </span> {id}</p>
         </div>
       </div>
     </div>
