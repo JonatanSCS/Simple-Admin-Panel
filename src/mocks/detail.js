@@ -27,7 +27,7 @@ export default {
           description: 'Payment from order',
           reference_id: null,
           status: 'declined',
-          amount: 10000,
+          amount: 42344,
           created: 1565800520,
           fee: 626,
           payment_method: {
@@ -59,7 +59,7 @@ export default {
           description: 'Payment from order',
           reference_id: null,
           status: 'paid',
-          amount: 23423,
+          amount: 10000,
           created: 1565645620,
           fee: 626,
           payment_method: {
@@ -91,7 +91,7 @@ export default {
           description: 'Payment from order',
           reference_id: null,
           status: 'partially_refunded',
-          amount: 43524,
+          amount: 12344,
           created: 1565844825,
           fee: 626,
           payment_method: {
