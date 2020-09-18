@@ -15,11 +15,6 @@
   margin-right: 10px;
 }
 
-.UserData p {
-  font-weight: 500;
-  font-size: 14px;
-}
-
 .UserData p:last-child::after {
   content: '\25BC';
 }

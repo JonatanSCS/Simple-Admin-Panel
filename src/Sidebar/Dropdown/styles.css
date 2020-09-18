@@ -9,6 +9,12 @@
   overflow: hidden;
 }
 
+.Dropdown ul li a {
+  padding: 15px 0 15px 60px;
+  color: var(--inactive-color-light);
+  display: block;
+}
+
 .Dropdown .Menu li a {
   color: var(--inactive-color-light)
 }
@@ -29,7 +35,6 @@
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 14px;
   transition: 0.5s;
 }
 
@@ -56,22 +61,12 @@
   margin-right: 20px;
 }
 
-.Dropdown ul li a {
-  padding: 15px 0 15px 60px;
-  color: var(--inactive-color-light);
-  display: block;
-}
 
 /* Active Status */
 .Dropdown .DropdownActive {
   border-left: 4px solid var(--active-color-dark);
   color: var(--active-color-dark);
 }
-
-.Dropdown .DropdownActive:hover {
-  font-size: 14px;
-}
-
 
 .Dropdown .DropdownActive .DropdownArrow {
   background-color: var(--active-color-dark);

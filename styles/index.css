@@ -4,10 +4,15 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
 body {
   background: var(--main-background);
+}
+
+h1 {
+  font-size: 25px;
 }
 
 .ViewContainer {
