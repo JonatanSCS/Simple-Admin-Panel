@@ -31,7 +31,7 @@ function Sidebar ({ history, test }) {
           data-testid="CloseMobileIcon"
         />
         <ul>
-          <li className="Hero">
+          <li className="Hero container-text-center container-align-center">
             <Link to="/">
               Santa Cruz
             </Link>

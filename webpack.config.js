@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 module.exports = {
   entry: './src/index.js',
@@ -9,12 +9,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: path.resolve('./index.html') }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [

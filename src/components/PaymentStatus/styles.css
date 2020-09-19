@@ -1,29 +1,21 @@
 .DataCard .Row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 20px 0;
 }
-
-
-.DataCard .Row p span {
-  display: block;
-  color: #848892;
-  font-size: 10px;
-  margin: 5px 0;
-}
-
 
 .DataCard .Ammount {
   font-size: 20px;
 }
 
-.DataCard .Created {
-  font-size: 13px;
-  text-align: center;
+.DataCard .StatusMessage {
+  margin-left: 10px;
 }
 
-.DataCard .StatusMessage {
-  font-size: 12px;
-  margin-left: 10px;
+.ClipBoard {
+  width: 15px;
+  cursor: pointer;
+}
+
+.ClipBoardRemove {
+  z-index: -1;
+  width: 50px;
 }

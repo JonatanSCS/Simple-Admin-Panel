@@ -1,5 +1,7 @@
 @import "reset.css";
 @import "variables.css";
+@import "container.css";
+@import "text.css";
 
 
 * {
@@ -21,10 +23,7 @@ h1 {
 }
 
 .DataCard {
-  background: #fff;
-  border-radius: 5px;
   padding: 20px 10px 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   height: 100%;
 }
 
@@ -37,7 +36,7 @@ h1 {
 }
 
 h1 {
-  margin: 0 0 20px ;
+  margin: 0 0 40px ;
 }
 
 ::-webkit-scrollbar {
@@ -47,19 +46,11 @@ h1 {
 
 header {
   height: 60px;
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
 }
 
 td {
   padding: 15px 10px 0;
-}
-
-.HeroContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 @media (min-width: 1024px) {

@@ -22,23 +22,23 @@ function PaymentMethod ({
   }
 
   return (
-    <div className="DataCard PaymentMethod" data-testid="PaymentMethodContainer">
+    <div className="DataCard container-shadow PaymentMethod" data-testid="PaymentMethodContainer">
       <h2>Payment Method</h2>
-      <div className="PaymentBank">
-        <p>{bank}</p>
-        <div className="PaymentBrand">
+      <div className="PaymentBank container-justify-between container-align-center">
+        <p className="text-size-small">{bank}</p>
+        <div className="PaymentBrand container-align-center">
           <img src={images[brand]} alt={bank} />
-          <p>{type}</p>
+          <p className="text-size-small">{type}</p>
         </div>
       </div>
-      <div className="PaymentCard">
+      <div className="PaymentCard container-text-center ">
         <div className="PaymentCardData">
           <p>... ... ... <span>{last4}</span></p>
           <p>{name}</p>
         </div>
         <div className="PaymentMetadata">
-          <p>Expiration Date: <span>{exp_month} / {exp_year}</span></p>
-          <p>Authorization Code: <span>{auth_code}</span></p>
+          <p className="text-size-small">Expiration Date: <span>{exp_month} / {exp_year}</span></p>
+          <p className="text-size-small">Authorization Code: <span>{auth_code}</span></p>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import './styles.css'
 
 function DataTabs ({ tabs, active, handleTab }) {
   return (
-    <div className="DataTabs" data-testid="DataTabsContainer">
+    <div className="DataTabs container-scroll" data-testid="DataTabsContainer">
       {tabs.map(({ id, label }) => {
         return (
           <button

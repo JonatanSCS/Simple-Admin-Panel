@@ -8,7 +8,7 @@ import './styles.css'
 
 function SortTable ({ sorters, active, onChange, items, viewed }, { location }) {
   return (
-    <div className="SortTable">
+    <div className="SortTable container-scroll">
       <table>
         <thead>
           <tr>

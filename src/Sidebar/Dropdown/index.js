@@ -11,7 +11,7 @@ function Dropdown ({ history, label, items, image, test }) {
   return (
     <li className="Dropdown">
       <p
-        className={visible ? 'DropdownActive' : ''}
+        className={`container-align-center ${visible ? 'DropdownActive' : ''}`}
         onClick={() => setVisible(!visible)}
         data-testid="DropdownHeader"
       >
@@ -22,9 +22,7 @@ function Dropdown ({ history, label, items, image, test }) {
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
         {items.map(({ id, label, path }) => (
           <li key={id} data-testid="DropdownItems">
-            <NavLink to={path} activeClassName="Active">
-              {label}
-            </NavLink>
+            <NavLink to={path} activeClassName="Active">{label}</NavLink>
           </li>
         ))}
       </ul>
