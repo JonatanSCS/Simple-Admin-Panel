@@ -22,9 +22,7 @@ function Dropdown ({ history, label, items, image, test }) {
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
         {items.map(({ id, label, path }) => (
           <li key={id} data-testid="DropdownItems">
-            <NavLink to={path} activeClassName="Active">
-              {label}
-            </NavLink>
+            <NavLink to={path} activeClassName="Active">{label}</NavLink>
           </li>
         ))}
       </ul>

@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 function Default ({ history }) {
   return (
     <div className="ViewContainer" data-testid="DefaultContainer">
-      <h1>View in maintaining: {history.location.pathname}</h1>
+      <h1>View in develop: {history.location.pathname}</h1>
     </div>
   )
 }

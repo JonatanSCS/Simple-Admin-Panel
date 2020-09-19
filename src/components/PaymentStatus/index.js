@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 
 import StatusLabel from 'components/StatusLabel'
+import copyImage from './copy.svg'
+
 import { calculateDate } from '../../utils'
 
 import './styles.css'
@@ -13,7 +15,13 @@ function PaymentStatus ({
   nested_charges,
   created
 }) {
+  const clipBoard = useRef(null)
   const message = nested_charges[0]?.failure_message
+
+  const handleClick = () => {
+    clipBoard.current.select()
+    document.execCommand('copy', false, null)
+  }
 
   return (
     <div className="DataCard container-shadow PaymentStatus" data-testid="PaymentStatusCard">
@@ -46,6 +54,13 @@ function PaymentStatus ({
         </div>
         <div className="Row container-justify-between container-align-center">
           <p className="Order"><span>Order ID: </span> {id}</p>
+          <img className="ClipBoard" src={copyImage} alt="Copy clipboard" onClick={handleClick}/>
+          <input
+            className="ClipBoardRemove"
+            value={id}
+            ref={clipBoard}
+            onChange={() => {}}
+          />
         </div>
       </div>
     </div>
