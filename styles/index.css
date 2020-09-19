@@ -45,6 +45,30 @@ h1 {
   background: transparent;
 }
 
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+td {
+  padding: 15px 10px 0;
+}
+
+.HeroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  header {
+    padding: 10px 40px;
+  }
+}
+
+
 @media (min-width: 1024px) {
   .MainContainer {
     margin-left: 300px;

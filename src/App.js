@@ -10,9 +10,9 @@ import routes from './routes'
 import Default from './views/Default'
 import Sidebar from './Sidebar'
 
-import UserMenu from './components/UserMenu'
+import UserMenu from 'components/UserMenu'
 
-import './styles.css'
+import '../styles/index.css'
 
 function renderRoutes (route) {
   const _route = { ...route }
