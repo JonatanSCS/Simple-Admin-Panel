@@ -58,7 +58,7 @@ export function PaymentNavigation ({ payments }) {
   }
 
   return (
-    <div className="DataCard PaymentNavigation" data-testid="PaymentNavigation">
+    <div className="DataCard container-shadow PaymentNavigation" data-testid="PaymentNavigation">
       <DataTabs tabs={tabs} active={active} handleTab={setActive} />
       {renderView(active)}
     </div>
@@ -88,7 +88,7 @@ function renderView (active, payment) {
   }
 
   return active === 'data' ? (
-    <div className="View">
+    <div className="View container-justify-between">
       <div className="PaymentStatusContainer">
         <PaymentStatus {...payment} />
       </div>
@@ -103,7 +103,7 @@ function renderView (active, payment) {
       </div>
     </div>
   ) : (
-    <div className="View Breakdown">
+    <div className="View container-shadow container-justify-between">
       <DataTable headers={headers} items={items} />
       <div className="BreakdownData">
         <p>Subtotal <span>$ {subtotal()}</span></p>

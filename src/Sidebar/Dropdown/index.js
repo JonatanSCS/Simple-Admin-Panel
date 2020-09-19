@@ -11,7 +11,7 @@ function Dropdown ({ history, label, items, image, test }) {
   return (
     <li className="Dropdown">
       <p
-        className={visible ? 'DropdownActive' : ''}
+        className={`container-align-center ${visible ? 'DropdownActive' : ''}`}
         onClick={() => setVisible(!visible)}
         data-testid="DropdownHeader"
       >

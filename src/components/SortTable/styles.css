@@ -1,7 +1,5 @@
 .SortTable {
-  overflow: scroll;
   background: #fff;
-  max-width: 1024px;
 }
 
 .SortTable .Active {
@@ -48,10 +46,6 @@
 
 .SortTable tbody tr:nth-child(2n - 1) {
   background: #F8F9FA;
-}
-
-.SortTable tbody tr td:first-child {
-  text-align: center;
 }
 
 @media (min-width: 1024px) {

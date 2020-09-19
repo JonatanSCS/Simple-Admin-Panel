@@ -18,7 +18,7 @@ function DataType ({ type, brand }) {
     american_express: americanImage
   }
   return (
-    <div className="DataTypeContainer">
+    <div className="container-align-center DataTypeContainer">
       <p>{type}</p>
       {type ? <img src={images[brand]} alt="Credit card" /> : null}
     </div>
@@ -42,7 +42,7 @@ function DataRow ({ data, fields, path, viewed = false }) {
   return (
     <tr className="DataRow" height="70px" data-testid="DataRowContainer">
       { viewed && (
-        <td>
+        <td className="container-text-center">
           <NavLink to={`${path}/${data.id}`}>
             <img src={eyeImage} alt="payment detail" className="DetailImage" />
           </NavLink>

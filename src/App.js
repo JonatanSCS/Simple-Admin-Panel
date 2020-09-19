@@ -25,9 +25,9 @@ const App = () => {
   return (
     <div id="AppAdminPanel">
       <Router>
-        <div className="HeroContainer">
+        <div className="container-align-center container-justify-between">
           <Sidebar />
-          <header>
+          <header className="container-align-center">
             <UserMenu />
           </header>
         </div>

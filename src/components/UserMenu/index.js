@@ -18,13 +18,13 @@ function UserMenu () {
 
   return (
     <div className="UserContainer" data-testid="UserContainer">
-      <div className="UserData" onClick={() => setMenuVisible(!menuVisible)} data-testid="UserDataContainer">
+      <div className="UserData container-align-center" onClick={() => setMenuVisible(!menuVisible)} data-testid="UserDataContainer">
         <img src={userImage} alt="User Image" />
-        <p><span>User name</span> Conekta Admin</p>
+        <p><span className="text-label">User name</span> Conekta Admin</p>
         <p />
       </div>
       { menuVisible && (
-        <ul className="UserMenu" data-testid="UserMenuContainer">
+        <ul className="UserMenu container-shadow" data-testid="UserMenuContainer">
           {links.map(({ id, label, path }) => (
             <li key={id}>
               <Link

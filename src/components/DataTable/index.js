@@ -6,7 +6,7 @@ function DataTable ({ headers, items }) {
     return headers.map(({ id }) => <td key={`${id}-${item.label}`}>{item[id]}</td>)
   }
   return (
-    <div className="DataTable" data-testid="DataTableContainer">
+    <div className="DataTable container-scroll" data-testid="DataTableContainer">
       <table>
         <thead>
           <tr>

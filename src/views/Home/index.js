@@ -4,7 +4,7 @@ import './styles.css'
 
 function Home () {
   return (
-    <div className="HomeContainer" data-testid="HomeContainer">
+    <div className="container-align-center HomeContainer" data-testid="HomeContainer">
       <h1>Santa Cruz</h1>
       <p>Simple Admin Panel</p>
     </div>

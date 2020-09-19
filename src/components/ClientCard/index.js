@@ -9,9 +9,13 @@ import './styles.css'
 
 function renderField ({ id, label, image, value }) {
   return value ? (
-    <div key={id} className="ClientCardField" data-testid={`ClientField-${id}`}>
+    <div
+      key={id}
+      className="container-align-center ClientCardField"
+      data-testid={`ClientField-${id}`}
+    >
       <img src={image} alt={`Client ${label}`}/>
-      <p><span>{label}:</span>{value}</p>
+      <p><span className="text-label">{label}:</span>{value}</p>
     </div>
   ) : null
 }
@@ -35,7 +39,7 @@ function ClientCard ({ name, email, phone }) {
   }]
 
   return (
-    <div className="DataCard" data-testid="ClientCardContainer">
+    <div className="DataCard container-shadow" data-testid="ClientCardContainer">
       <h2>Client</h2>
       {fields.map(renderField)}
     </div>
