@@ -50,6 +50,10 @@ h3 {
   font-size: 16px;
 }
 
+.BreakdownData p:last-child span {
+  font-size: 24px;
+}
+
 @media (min-width: 768px) {
 
   .ClientCardContainer, .PaymentMethodContainer {

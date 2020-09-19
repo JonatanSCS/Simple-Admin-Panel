@@ -16,7 +16,7 @@ function Dropdown ({ history, label, items, image, test }) {
         data-testid="DropdownHeader"
       >
         <span className="DropdownArrow" data-testid="DropdownArrow" />
-        <img className ="DropdownImage" src={image} />
+        <img className ="DropdownImage" src={image} alt="Label" />
         {label}
       </p>
       <ul className={`Menu ${visible ? 'Visible' : ''}`}>
