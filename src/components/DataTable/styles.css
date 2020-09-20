@@ -1,0 +1,20 @@
+.DataTable {
+  padding: 10px 0;
+}
+
+.DataTable table {
+  width: 100%;
+}
+
+.DataTable th, td {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.DataTable thead th {
+  padding: 10px;
+}
+
+.DataTable tbody tr:nth-child(2n - 1) {
+  background: #F8F9FA;
+}

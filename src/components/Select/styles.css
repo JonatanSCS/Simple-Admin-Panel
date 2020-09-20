@@ -1,0 +1,40 @@
+select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #fff;
+  background-image: none;
+  flex: 1;
+  padding: 0 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  line-height: 3;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 2.5px;
+  min-height: 50px;
+  margin: 15px 0;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 15px;
+  background: #fff;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+  font-size: 10px;
+}

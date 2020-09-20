@@ -4,5 +4,5 @@ import App from './App'
 
 test('Page render successfully', () => {
   const wrapper = shallow(<App />)
-  expect(wrapper.find('h1').text()).toEqual('Simple Admin Panel')
+  expect(wrapper.find('#AppAdminPanel').exists())
 })

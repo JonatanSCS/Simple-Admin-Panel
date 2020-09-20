@@ -1,0 +1,16 @@
+.DataRow {
+  min-height: 50px;
+}
+
+.DetailImage {
+  width: 20px;
+}
+
+.DataContainer p {
+  margin-bottom: 10px;
+}
+
+.DataTypeContainer img {
+  width: 20px;
+  margin-left: 10px;
+}

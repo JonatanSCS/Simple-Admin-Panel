@@ -1,0 +1,18 @@
+.text-label {
+  color: #848892;
+  display: block;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.text-size-small {
+  font-size: 12px;
+}
+
+.text-size-medium {
+  font-size: 16px;
+}
+
+.text-size-big {
+  font-size: 18px;
+}

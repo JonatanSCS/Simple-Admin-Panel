@@ -1,0 +1,25 @@
+.container-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.container-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-scroll {
+  width: 100%;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+.container-text-center {
+  text-align: center;
+}
+
+.container-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  border-radius: 4px;
+}

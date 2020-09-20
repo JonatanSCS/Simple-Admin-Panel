@@ -1,0 +1,56 @@
+.SortTable {
+  background: #fff;
+}
+
+.SortTable .Active {
+  font-weight: 500;
+  color: var(--active-color-dark);
+}
+
+.SortTable table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.SortTable th, td {
+  text-align: left;
+  padding: 15px 10px 0;
+  height: 30px;
+  vertical-align: top;
+  font-weight: 400;
+}
+
+.SortTable th {
+  white-space: nowrap;
+  font-weight: 300;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.SortTable th:after {
+  content: '\25BC';
+  padding: 0 15px;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+  font-size: 7px;
+  display: none;
+}
+
+.FirstHeader {
+  visibility: hidden;
+}
+
+.SortTable tbody tr:nth-child(2n - 1) {
+  background: #F8F9FA;
+}
+
+@media (min-width: 1024px) {
+  .SortTable th:after {
+    display: inline;
+  }
+
+}

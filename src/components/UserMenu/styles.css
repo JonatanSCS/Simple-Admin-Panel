@@ -1,0 +1,34 @@
+.UserContainer {
+  position: relative;
+  z-index: 9;
+}
+
+.UserData {
+  cursor: pointer;
+}
+
+.UserData img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.UserData p:last-child::after {
+  content: '\25BC';
+  font-size: 8px;
+  margin: 0 10px;
+}
+
+.UserMenu {
+  position: absolute;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.UserMenu li a {
+  color: #000;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: block;
+}

@@ -1,0 +1,21 @@
+.DataCard .Row {
+  margin: 20px 0;
+}
+
+.DataCard .Ammount {
+  font-size: 20px;
+}
+
+.DataCard .StatusMessage {
+  margin-left: 10px;
+}
+
+.ClipBoard {
+  width: 15px;
+  cursor: pointer;
+}
+
+.ClipBoardRemove {
+  z-index: -1;
+  width: 50px;
+}
