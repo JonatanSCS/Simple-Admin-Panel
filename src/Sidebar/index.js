@@ -32,9 +32,7 @@ function Sidebar ({ history, test }) {
         />
         <ul>
           <li className="Hero container-text-center container-align-center">
-            <Link to="/">
-              Santa Cruz
-            </Link>
+            <Link to="/">Santa Cruz</Link>
           </li>
           { routes.map(route => route.id === 'home' ? null : (
             <Dropdown

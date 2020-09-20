@@ -10,10 +10,10 @@ h3 {
   flex-wrap: wrap;
 }
 
-.PaymentStatusContainer,
-.ClientCardContainer,
-.PaymentMethodContainer,
-.PaymentNavigationContainer {
+.status-container,
+.client-container,
+.method-container,
+.nav-container {
   width: 100%;
   margin: 20px 0;
 }
@@ -48,7 +48,7 @@ h3 {
 
 @media (min-width: 768px) {
 
-  .ClientCardContainer, .PaymentMethodContainer {
+  .client-container, .method-container {
     width: 49%;
   }
 
@@ -59,19 +59,21 @@ h3 {
 }
 
 @media (min-width: 1440px) {
-  .PaymentStatusContainer, .ClientCardContainer, .PaymentMethodContainer {
+  .status-container,
+  .client-container,
+  .method-container {
     max-height: 200px;
   }
 
-  .PaymentStatusContainer {
+  .status-container {
     width: 50%;
   }
 
-  .ClientCardContainer, .PaymentMethodContainer {
+  .client-container, .method-container {
     width: 24%;
   }
 
-  .PaymentNavigationContainer {
+  .nav-container {
     width: 75%;
   }
 }
