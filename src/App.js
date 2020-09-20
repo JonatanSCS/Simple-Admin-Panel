@@ -12,7 +12,7 @@ import Sidebar from './Sidebar'
 
 import UserMenu from 'components/UserMenu'
 
-import '../styles/index.css'
+import './styles/index.css'
 
 function renderRoutes (route) {
   const _route = { ...route }
